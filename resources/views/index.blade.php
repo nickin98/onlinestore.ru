@@ -27,6 +27,14 @@
 			<a href="#"><img src="img/buy_icon.png"></a>
 		</div>
 	</header>
+	<input type="text" class="mask-phone form-control" placeholder="Номер телефона">
+ 
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="/plugins/jquery.maskedinput.min.js"></script>
+	 
+	<script>
+	$('.mask-phone').mask('+7 (999) 999-99-99');
+	</script>
 	<nav>
 		<ul>
 			<li>Меню доставки</li>
