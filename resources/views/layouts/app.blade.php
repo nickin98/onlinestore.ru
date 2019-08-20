@@ -9,7 +9,6 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -75,6 +74,11 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ URL::asset('js/app.js') }}"></script>
+    <script src="{{ URL::asset('js/jquery.maskedinput.min.js') }}"></script>
+    <script src="{{ URL::asset('js/jquery.maskedinput.js') }}"></script>
+    <script>
+        $("#phone").mask("+7(999) 999-99-99");
+    </script>
 </body>
 </html>
