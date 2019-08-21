@@ -15,9 +15,10 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('customer_name');
             $table->boolean('near_time_delivery')->nullable();
             $table->dateTime('exact_delivery_time')->nullable();
-            $table->text('comment')->nullable();;
+            $table->text('comment')->nullable();
             $table->integer('customer_id');
             $table->timestamps();
         });

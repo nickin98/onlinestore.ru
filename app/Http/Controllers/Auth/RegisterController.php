@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Customer;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -62,10 +63,12 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        Customer::create([
             'phone' => $data['phone'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
+            'email' => $data['email']
+        ]);
+        return User::create([
+            'password' => bcrypt($data['password'])
         ]);
     }
 }
