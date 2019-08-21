@@ -6,15 +6,31 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, a, abb
 
 body {
 	width:1140px;
+	margin: 0 auto;/*центрируем ее*/
 	height: auto;
 }
-
 
 /* <header> */
 	#navbar-social {
 		height: 35px;
-		float:left;
+		padding-left: 13px;
+		padding-top: 3px;
 		background-color: #fdf4e3;
+	}
+
+	#navbar-social p {
+		float: left;
+	}
+
+	#navbar-social img{
+		width: 29px;
+		height: 29px;
+		margin-left: 5px;
+	}
+
+	#navbar-logo {
+		height: 100px;
+		background-color: #000000;
 	}
 /* </header> */
 
@@ -23,6 +39,14 @@ body {
 /* </nav> */
 
 /* <main> */
+
+/*
+img{
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+*/
 
 /* </main> */
 

@@ -11,56 +11,57 @@
 	<link  href="css/style.css" rel="stylesheet"/>
 </head>
 <body>
-	@include('layouts/header')
+	<div class="container">
+		@include('layouts/header')
 
-	@include('layouts/nav')
-	<main>
-		<section>
-			<article>
-				<div class="name_product">
-					<a href="#"><h2>ДУРУМ(Шаурма по Армянски)</h2></a>
-				</div>
-				<div class="about_product">
-					<p>Свежие огурцы</p>
-					<img src="img/durum.jpg">
-					<section>
-						<p>Масса: 300г</p>
-						<p>120 Руб.</p>
-						<p>В корзину</p>
-					</section>
-				</div>
-			</article>
-			<article>
-				<div class="name_product">
-					<a href="#"><h2>ДУРУМ(Шаурма по Армянски)</h2></a>
-				</div>
-				<div class="about_product">
-					<p>Свежие огурцы</p>
-					<img src="img/durum.jpg">
-					<section>
-						<p>Масса: 300г</p>
-						<p>120 Руб.</p>
-						<p>В корзину</p>
-					</section>
-				</div>
-			</article>
-			<article>
-				<div class="name_product">
-					<a href="#"><h2>ДУРУМ(Шаурма по Армянски)</h2></a>
-				</div>
-				<div class="about_product">
-					<p>Свежие огурцы</p>
-					<img src="img/durum.jpg">
-					<section>
-						<p>Масса: 300г</p>
-						<p>120 Руб.</p>
-						<p>В корзину</p>
-					</section>
-				</div>
-			</article>
-		</section>
-	</main>
-	@include('layouts/footer')
+		@include('layouts/nav')
+		<main class="raw">
+			<section class="col-md-12">
+				<article class="col-md-3">
+					<div class="name_product">
+						<a href="#"><h2>ДУРУМ(Шаурма по Армянски)</h2></a>
+					</div>
+					<div class="about_product">
+						<p>Свежие огурцы</p>
+						<img src="img/durum.jpg">
+						<section>
+							<p>Масса: 300г</p>
+							<p>120 Руб.</p>
+							<p>В корзину</p>
+						</section>
+					</div>
+				</article>
+				<article class="col-md-3">
+					<div class="name_product">
+						<a href="#"><h2>ДУРУМ(Шаурма по Армянски)</h2></a>
+					</div>
+					<div class="about_product">
+						<p>Свежие огурцы</p>
+						<img src="img/durum.jpg">
+						<section>
+							<p>Масса: 300г</p>
+							<p>120 Руб.</p>
+							<p>В корзину</p>
+						</section>
+					</div>
+				</article>
+				<article class="col-md-3">
+					<div class="name_product">
+						<a href="#"><h2>ДУРУМ(Шаурма по Армянски)</h2></a>
+					</div>
+					<div class="about_product">
+						<p>Свежие огурцы</p>
+						<img src="img/durum.jpg">
+						<section>
+							<p>Масса: 300г</p>
+							<p>120 Руб.</p>
+							<p>В корзину</p>
+						</section>
+					</div>
+				</article>
+			</section>
+		</main>
+		@include('layouts/footer')
+	</div>
 </body>
 </html>
- //
