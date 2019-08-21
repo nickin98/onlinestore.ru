@@ -6,16 +6,23 @@
             <a href="#"><img src="images/inst_logo.png"></a>
         </div>
         <div id="navbar-logo">
-            <a href="#"><img src="img/clock_icon.ico"></a>
-            <p>Время работы</p>
-            <p>понедельник - воскресенье</p>
-            <p>с 10:00 - 02:00</p>
-            <p>Адрес: г.Верхняя Пышма Успенский проспект 56, паркорвка ТЦ Куприт</p>
+            <a href="#" id="clock-icon"><img src="images/clock_icon.ico"></a>
+            <p id="first-p">Время работы
+                <br>
+                понедельник - воскресенье
+                <br>
+                с 10:00 - 02:00
+                <br>
+                Адрес: г.Верхняя Пышма Успенский проспект 56, паркорвка ТЦ Куприт
+            </p>
             <a href="#"><h1>DURUM</h1></a>
-            <a href="#"><img src="img/delivery_icon.png"></a>
-            <p>Доставка(подробнее)</p>
-            <p>+7(922)600-64-14</p>
-            <a href="#"><img src="img/buy_icon.png"></a>
+            <a href="#" id="car-icon"><img src="images/delivery_icon.png"></a>
+            <p id="two-p">
+                Доставка(подробнее)
+                <br>
+                +7(922)600-64-14
+            </p>
+            <a href="#" id="buy-icon"><img src="images/buy_icon.png"></a>
         </div>
     </header>
 </div>

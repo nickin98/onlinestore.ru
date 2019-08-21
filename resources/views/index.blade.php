@@ -15,7 +15,7 @@
 		@include('layouts/header')
 
 		@include('layouts/nav')
-		<main class="raw">
+		<main class="row">
 			<section class="col-md-12">
 				<article class="col-md-3">
 					<div class="name_product">
@@ -23,7 +23,7 @@
 					</div>
 					<div class="about_product">
 						<p>Свежие огурцы</p>
-						<img src="img/durum.jpg">
+						<img src="images/durum.jpg">
 						<section>
 							<p>Масса: 300г</p>
 							<p>120 Руб.</p>
@@ -37,7 +37,7 @@
 					</div>
 					<div class="about_product">
 						<p>Свежие огурцы</p>
-						<img src="img/durum.jpg">
+						<img src="images/durum.jpg">
 						<section>
 							<p>Масса: 300г</p>
 							<p>120 Руб.</p>
@@ -51,7 +51,7 @@
 					</div>
 					<div class="about_product">
 						<p>Свежие огурцы</p>
-						<img src="img/durum.jpg">
+						<img src="images/durum.jpg">
 						<section>
 							<p>Масса: 300г</p>
 							<p>120 Руб.</p>
