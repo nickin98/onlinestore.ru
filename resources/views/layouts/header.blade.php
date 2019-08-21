@@ -1,5 +1,5 @@
 <div class="row">
-    <header class="col-md-12">
+    <header class="col-xl-12">
         <div id="navbar-social">
             <p>Мы в соцсетях:</p>
             <a href="#"><img src="images/vk_logo.png"></a>

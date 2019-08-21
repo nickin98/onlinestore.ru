@@ -1,10 +1,11 @@
-<div class="row">
-    <nav  class="col-md-12">
-        <ul>
-            <a href="#"><li col-md-4>Меню доставки</li></a>
-            <a href="#"><li col-md-2>Акции</li></a>
-            <a href="#"><li col-md-2>О компании</li></a>
-            <a href="#"><li col-md-4>Вход/Регистрация</li></a>
-        </ul>
-    </nav>
-</div>
+<nav  class="col-xl-12">
+    <ul>
+        <div class="row">
+            <li class="col-md-3"><a href="#">Меню доставки</a></li>
+            <li class="col-md-2"><a href="#">Акции</a></li>
+            <li class="col-md-2"><a href="#">О нас</a></li>
+            <li class="col-md-2"><a href="#">Вход</a></li>
+            <li class="col-md-3"><a href="#">Регистрация</a></li>
+        </div>
+    </ul>
+</nav>

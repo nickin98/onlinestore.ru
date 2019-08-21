@@ -16,7 +16,77 @@
 
 		@include('layouts/nav')
 		<main class="row">
-			<section class="col-md-12">
+			<section class="col-xl-12"">
+				<article class="col-md-3">
+					<div class="name_product">
+						<a href="#"><h2>ДУРУМ(Шаурма по Армянски)</h2></a>
+					</div>
+					<div class="about_product">
+						<p>Свежие огурцы</p>
+						<img src="images/durum.jpg">
+						<section>
+							<p>Масса: 300г</p>
+							<p>120 Руб.</p>
+							<p>В корзину</p>
+						</section>
+					</div>
+				</article>
+				<article class="col-md-3">
+					<div class="name_product">
+						<a href="#"><h2>ДУРУМ(Шаурма по Армянски)</h2></a>
+					</div>
+					<div class="about_product">
+						<p>Свежие огурцы</p>
+						<img src="images/durum.jpg">
+						<section>
+							<p>Масса: 300г</p>
+							<p>120 Руб.</p>
+							<p>В корзину</p>
+						</section>
+					</div>
+				</article>
+				<article class="col-md-3">
+					<div class="name_product">
+						<a href="#"><h2>ДУРУМ(Шаурма по Армянски)</h2></a>
+					</div>
+					<div class="about_product">
+						<p>Свежие огурцы</p>
+						<img src="images/durum.jpg">
+						<section>
+							<p>Масса: 300г</p>
+							<p>120 Руб.</p>
+							<p>В корзину</p>
+						</section>
+					</div>
+				</article>
+				<article class="col-md-3">
+					<div class="name_product">
+						<a href="#"><h2>ДУРУМ(Шаурма по Армянски)</h2></a>
+					</div>
+					<div class="about_product">
+						<p>Свежие огурцы</p>
+						<img src="images/durum.jpg">
+						<section>
+							<p>Масса: 300г</p>
+							<p>120 Руб.</p>
+							<p>В корзину</p>
+						</section>
+					</div>
+				</article>
+				<article class="col-md-3">
+					<div class="name_product">
+						<a href="#"><h2>ДУРУМ(Шаурма по Армянски)</h2></a>
+					</div>
+					<div class="about_product">
+						<p>Свежие огурцы</p>
+						<img src="images/durum.jpg">
+						<section>
+							<p>Масса: 300г</p>
+							<p>120 Руб.</p>
+							<p>В корзину</p>
+						</section>
+					</div>
+				</article>
 				<article class="col-md-3">
 					<div class="name_product">
 						<a href="#"><h2>ДУРУМ(Шаурма по Армянски)</h2></a>
