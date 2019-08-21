@@ -1,48 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<link rel="stylesheet" href="css/style.css" type="text/css"/>
 	<meta charset="UTF-8">
 	<title>Site</title>
 	<meta name="keywords" content="keywords">
     <meta name="description" content="description_site">
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<!-- CSS -->
+	<link  href="css/style.css" rel="stylesheet"/>
 </head>
 <body>
-	<header>
-		<div id="navbar-social">
-			<p>Мы в соцсетях:</p>
-			<a href="#"><img src="img/vk_icon.ico"></a>
-			<a href="#"><img src="img/inst_icon.ico"></a>
-		</div>
-		<div id="navbar-logo">
-			<a href="#"><img src="img/clock_icon.ico"></a>
-			<p>Время работы</p>
-			<p>понедельник - воскресенье</p>
-			<p>с 10:00 - 02:00</p>
-			<p>Адрес: г.Верхняя Пышма Успенский проспект 56, паркорвка ТЦ Куприт</p>
-			<a href="#"><h1>DURUM</h1></a>
-			<a href="#"><img src="img/delivery_icon.png"></a>
-			<p>Доставка(подробнее)</p>
-			<p>+7(922)600-64-14</p>
-			<a href="#"><img src="img/buy_icon.png"></a>
-		</div>
-	</header>
-	<input type="text" class="mask-phone form-control" placeholder="Номер телефона">
- 
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script type="text/javascript" src="/plugins/jquery.maskedinput.min.js"></script>
-	 
-	<script>
-	$('.mask-phone').mask('+7 (999) 999-99-99');
-	</script>
-	<nav>
-		<ul>
-			<li>Меню доставки</li>
-			<li>Акции</li>
-			<li>О компании</li>
-			<li>Вход/Регистрация</li>
-		</ul>
-	</nav>
+	@include('layouts/header')
+
+	@include('layouts/nav')
 	<main>
 		<section>
 			<article>
@@ -73,7 +44,7 @@
 					</section>
 				</div>
 			</article>
-						<article>
+			<article>
 				<div class="name_product">
 					<a href="#"><h2>ДУРУМ(Шаурма по Армянски)</h2></a>
 				</div>
@@ -89,8 +60,7 @@
 			</article>
 		</section>
 	</main>
-	<footer>
-		
-	</footer>
+	@include('layouts/footer')
 </body>
 </html>
+ //
