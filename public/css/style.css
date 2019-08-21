@@ -114,6 +114,10 @@ main img{
 
 /* <article> */
 
+article {
+	float: left;
+}
+
 /* </article> */
 
 /* <footer> */
