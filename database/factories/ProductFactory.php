@@ -13,11 +13,15 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(App\User::class, function (Faker $faker) {
+$factory->define(App\Product::class, function (Faker $faker) {
     return [
-        'phone' => '+7(343) ' . $faker->regexify('[0-9]{3}-[0-9]{2}-[0-9]{2}'),
-        'email' => $faker->unique()->safeEmail,
-        'password' => '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', // secret
-        'remember_token' => str_random(10),
+        'title' => $faker->sentence(3),
+        'description' => $faker->sentence(4),
+        'price' => $faker->randomNumber(2), // secret
+        'image' => str_random(10),
+        'availability' => rand(0,1),
+        'category_id' => function () {
+            return App\Category::orderBy(DB::raw('RAND()'))->first()->id;
+        }
     ];
 });

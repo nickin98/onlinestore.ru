@@ -16,9 +16,14 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
             $table->string('customer_name');
+            $table->string('street');
+            $table->string('house');
+            $table->string('flat')->nullable();
+            $table->integer('form_payment');
             $table->boolean('near_time_delivery')->nullable();
             $table->dateTime('exact_delivery_time')->nullable();
             $table->text('comment')->nullable();
+            $table->integer('status');
             $table->integer('customer_id');
             $table->timestamps();
         });

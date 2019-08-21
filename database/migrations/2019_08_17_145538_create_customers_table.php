@@ -16,12 +16,8 @@ class CreateCustomersTable extends Migration
         Schema::create('customers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('phone')->unique();
-            $table->string('name')->unique();
-            $table->string('street');
-            $table->string('house');
-            $table->string('flat')->nullable();
-            $table->integer('form_payment');
-            $table->integer('user_id');
+            $table->string('email')->unique();
+            $table->integer('user_id')->nullable();
             $table->timestamps();
         });
     }
