@@ -13,7 +13,7 @@ class OrderTableSeeder extends Seeder
     public function run()
     {
         Customer::all()->each(function ($customer) {
-            $customer->order()->save(factory(App\Order::class)->make());
+            $customer->orders()->saveMany(factory(App\Order::class, random_int(1,10))->make());
         });
     }
 }

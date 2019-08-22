@@ -6,7 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    public function product() {
-        return $this->hasOne('App\Product');
+    // Возвращает "отношение" один ко многим между таблицами categories и products
+    // Данное "отношение" используется в коде для получения всех Product для Category,
+    // заполнения начальными данными и тд
+    public function products() {
+        return $this->hasMany('App\Product');
     }
 }

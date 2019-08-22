@@ -22,7 +22,8 @@ class CreateProductsTable extends Migration
             $table->integer('availability');
             $table->text('seo_words')->nullable();
             $table->text('seo_description')->nullable();
-            $table->integer('category_id');
+            $table->integer('category_id')->unsigned();
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
         });
     }

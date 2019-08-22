@@ -14,6 +14,9 @@ use Faker\Generator as Faker;
 */
 
 $factory->define(App\Customer::class, function (Faker $faker) {
-    return [];
+    return [
+        'phone' => '+7(343) ' . $faker->regexify('[0-9]{3}-[0-9]{2}-[0-9]{2}'),
+        'email' => $faker->unique()->safeEmail
+    ];
 });
 

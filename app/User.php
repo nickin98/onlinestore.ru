@@ -27,6 +27,9 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    // Возвращает "отношение" один к одному между таблицами users и customers
+    // Данное "отношение" используется в коде для получения единственного существующего Customer соответствующего User,
+    // заполнения начальными данными и тд
     public function customer() {
         return $this->hasOne('App\Customer');
     }
