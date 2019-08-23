@@ -7,135 +7,80 @@ html, body, div, span, br, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, a,
 }
 
 body {
-	width:1140px;
-	margin: 0 auto;
 	height: auto;
 	font-family: 'Livvic', sans-serif;
+	background-color: #fceac6;
 }
 
-/* <header> */
-	#navbar-social {
-		height: 35px;
-		padding-left: 13px;
-		padding-top: 3px;
-		background-color: #fdf4e3;
-		font-weight:bold;
-	}
-
-	#navbar-social p {
-		float: left;
-	}
-
-	#navbar-social img{
-		width: 29px;
-		height: 29px;
-		margin-left: 5px;
-	}
-
-	#navbar-logo {
-		position: relative;
-		height: 100px;
-		background-color: #000000;
-	}
-
-	#clock-icon img{
-		position: absolute;
-		width: 49px;
-		height: 49px;
-		margin: 25px 9px 0 13px;
-	}
-
-	#car-icon img{
-		position: absolute;
-		color: red;
-		width: 49px;
-		height: 49px;
-		margin: 25px 9px 0 13px;
-		margin-left: 730px;
-	}
-
-	#buy-icon img {
-		position: absolute;
-		width: 110px;
-		height: 80px;
-		margin: 10px 9px 0 13px;
-		margin-left: 988px;
-	}
-
-	#first-p {
-		position: absolute;
-		color: #fdf4e3;
-		font-size: 16px;
-		font-weight:bold;
-		margin-left: 68px;
-	}
-
-	#two-p {
-		position: absolute;
-		color: #fdf4e3;
-		font-size: 16px;
-		font-weight: bold;
-		margin-top: 25px;
-		margin-left: 790px;
+.container {
+	width:1140px;
 }
 
-	#navbar-logo h1 {
-		position: absolute;
-		color: #fdf4e3;
-		font-size: 72px;
-		font-weight:bold;
-		margin-left: 458px;
-	}
-/* </header> */
 
-/* <nav> */
-	nav ul {
-		list-style: none;
-	}
+/* Start Navigation */
+nav {
+	background-color: #a55f41; /* Цвет меню */
+}
 
-	nav li {
-		display: inline;
-		height: 39px;
-		background-color: #fdf4e3;
-		text-align:  center;
-		font-size: 21px;
-		font-weight:bold;
-		border: 2px solid black
-	}
+nav a {
+	color: #eef0e9; /* Цвет ссылок */
+}
 
+nav a:hover {
+	color: #fceac6; /* Цвет ссылок при наведении */
+}
 
-	nav .row a {
-		text-decoration: none;
-		color: #000000;
+.navbar-brand {
+	font-size: 26px; /* Размер шрифта бренда */
+}
 
-	}
+.navbar-toggler {
+	background-color: #503434; /* Изменение фона кнопки на мобильных устройствах */
+}
 
-	nav .row a:hover{
-		color: #FF0033;
-	}
+.navbar-toggler-icon {
+	height: 25px; /* Размер иконки по высоте на моб. устройствах */
+	width:25px; /* Размер иконки по высоте на моб. устройствах */
+	margin-top: 3px; /* Отступ иконки сверху на моб. устройствах */
+	color: #eef0e9; /* Цвет иконки на моб. устройствах */
+}
+/* End Navigation */
 
+/* Start Carousel */
 
-/* </nav> */
+.d-block {
+	height: 300px; /* Размер изображения карусели по высоте */
+}
 
-/* <main> */
+/* End Carousel */
 
+/* Start Content */
 
-main img{
+.product {
+	height: 300px;
+	margin-top: 5px;
+	background-color: #eef0e9;
+}
+
+.product img {
 	max-width: 100%;
 	height: auto;
 	display: block;
 }
 
-/* </main> */
-
-/* <article> */
-
-article {
-	float: left;
+.product a {
+	text-decoration: none;
 }
 
-/* </article> */
+.product a:hover {
+	color: #a55f41;
+}
 
-/* <footer> */
+.name-product {
+	font-size: 16px;
+	color: #503434;
 
-/* </footer> */
+}
+
+/* End Content */
+

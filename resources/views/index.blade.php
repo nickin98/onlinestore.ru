@@ -6,132 +6,33 @@
 	<meta name="keywords" content="keywords">
     <meta name="description" content="description_site">
 	<!-- Bootstrap -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<!-- CSS -->
 	<link  href="css/style.css" rel="stylesheet"/>
+	<!-- JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 <body>
+	@include('layouts/nav')
+	@include('layouts/carousel')
 	<div class="container">
-		@include('layouts/header')
+		<div class="row">
+			<div class="product col-lg-3">
+				<h2><a class="name-product" href="#">Дурум (Шаурма по армянски)</a></h2>
+				<img src="images/durum.jpg">
+			</div>
+			<div class="col-lg-3">
 
-		@include('layouts/nav')
-		<main class="row">
-			<section class="col-xl-12"">
-				<article class="col-md-3">
-					<div class="name_product">
-						<a href="#"><h2>ДУРУМ(Шаурма по Армянски)</h2></a>
-					</div>
-					<div class="about_product">
-						<p>Свежие огурцы</p>
-						<img src="images/durum.jpg">
-						<section>
-							<p>Масса: 300г</p>
-							<p>120 Руб.</p>
-							<p>В корзину</p>
-						</section>
-					</div>
-				</article>
-				<article class="col-md-3">
-					<div class="name_product">
-						<a href="#"><h2>ДУРУМ(Шаурма по Армянски)</h2></a>
-					</div>
-					<div class="about_product">
-						<p>Свежие огурцы</p>
-						<img src="images/durum.jpg">
-						<section>
-							<p>Масса: 300г</p>
-							<p>120 Руб.</p>
-							<p>В корзину</p>
-						</section>
-					</div>
-				</article>
-				<article class="col-md-3">
-					<div class="name_product">
-						<a href="#"><h2>ДУРУМ(Шаурма по Армянски)</h2></a>
-					</div>
-					<div class="about_product">
-						<p>Свежие огурцы</p>
-						<img src="images/durum.jpg">
-						<section>
-							<p>Масса: 300г</p>
-							<p>120 Руб.</p>
-							<p>В корзину</p>
-						</section>
-					</div>
-				</article>
-				<article class="col-md-3">
-					<div class="name_product">
-						<a href="#"><h2>ДУРУМ(Шаурма по Армянски)</h2></a>
-					</div>
-					<div class="about_product">
-						<p>Свежие огурцы</p>
-						<img src="images/durum.jpg">
-						<section>
-							<p>Масса: 300г</p>
-							<p>120 Руб.</p>
-							<p>В корзину</p>
-						</section>
-					</div>
-				</article>
-				<article class="col-md-3">
-					<div class="name_product">
-						<a href="#"><h2>ДУРУМ(Шаурма по Армянски)</h2></a>
-					</div>
-					<div class="about_product">
-						<p>Свежие огурцы</p>
-						<img src="images/durum.jpg">
-						<section>
-							<p>Масса: 300г</p>
-							<p>120 Руб.</p>
-							<p>В корзину</p>
-						</section>
-					</div>
-				</article>
-				<article class="col-md-3">
-					<div class="name_product">
-						<a href="#"><h2>ДУРУМ(Шаурма по Армянски)</h2></a>
-					</div>
-					<div class="about_product">
-						<p>Свежие огурцы</p>
-						<img src="images/durum.jpg">
-						<section>
-							<p>Масса: 300г</p>
-							<p>120 Руб.</p>
-							<p>В корзину</p>
-						</section>
-					</div>
-				</article>
-				<article class="col-md-3">
-					<div class="name_product">
-						<a href="#"><h2>ДУРУМ(Шаурма по Армянски)</h2></a>
-					</div>
-					<div class="about_product">
-						<p>Свежие огурцы</p>
-						<img src="images/durum.jpg">
-						<section>
-							<p>Масса: 300г</p>
-							<p>120 Руб.</p>
-							<p>В корзину</p>
-						</section>
-					</div>
-				</article>
-				<article class="col-md-3">
-					<div class="name_product">
-						<a href="#"><h2>ДУРУМ(Шаурма по Армянски)</h2></a>
-					</div>
-					<div class="about_product">
-						<p>Свежие огурцы</p>
-						<img src="images/durum.jpg">
-						<section>
-							<p>Масса: 300г</p>
-							<p>120 Руб.</p>
-							<p>В корзину</p>
-						</section>
-					</div>
-				</article>
-			</section>
-		</main>
-		@include('layouts/footer')
+			</div>
+			<div class="col-lg-3">
+
+			</div>
+			<div class="col-lg-3">
+
+			</div>
+		</div>
 	</div>
 </body>
 </html>
