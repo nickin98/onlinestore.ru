@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
 
@@ -25,7 +26,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+        return view('product.create',['categories' => $categories]);
     }
 
     /**
@@ -36,7 +38,35 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+            'image' => 'required',
+            'availability' => 'required',
+            'category' => 'required'
+        ]);
+
+//        Product::create([
+//            'title' => $request->title,
+//            'description' => $request->description,
+//            'price' => $request->price,
+//            'image' => 'img/durum.jpg',
+//            'availability' => $request->availability,
+//            'category_id' => 1
+//        ]);
+
+        $product = new Product();
+        $product->title = $request->title;
+        $product->description = $request->description;
+        $product->price = $request->price;
+        $product->image = 'img/durum.jpg';
+        $product->availability = $request->availability;
+        $product->category_id = '1';
+        $product->save();
+
+
+        return redirect()->route('products.index');
     }
 
     /**
