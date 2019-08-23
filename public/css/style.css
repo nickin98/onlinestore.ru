@@ -57,8 +57,8 @@ nav a:hover {
 /* Start Content */
 
 .product {
-	height: 300px;
-	margin-top: 5px;
+	height: auto;
+	margin-top: 10px;
 	background-color: #eef0e9;
 }
 
@@ -66,6 +66,11 @@ nav a:hover {
 	max-width: 100%;
 	height: auto;
 	display: block;
+}
+
+.name-product {
+	font-size: 16px;
+	color: #503434;
 }
 
 .product a {
@@ -76,11 +81,44 @@ nav a:hover {
 	color: #a55f41;
 }
 
-.name-product {
-	font-size: 16px;
-	color: #503434;
+.product-controls {
+	height: 50px;
+	margin-bottom: 10px;
+	padding: 10px 15px 0 15px;
+}
 
+.product-price {
+	font-size: 24px;
+}
+
+.product-money {
+	font-weight: bold;
+}
+
+.product-to-cart {
+	margin-top: 5px;
 }
 
 /* End Content */
 
+/* Start Button */
+
+a.accept-product{
+	color: #503434;
+	padding: 10px 10px;
+	width: 100px;
+	text-decoration:none;
+	text-align:center;
+	background-image: linear-gradient(to left,transparent,transparent 50%,#a55f41 50%,#a55f41);
+	background-position: 100% 0;
+	background-size: 200% 100%;
+	transition: all .25s ease-in;
+	font: 400 18px tahoma;
+	border: 1px solid #503434;
+}
+a.accept-product:hover {
+	background-position: 0 0;
+	color:#503434;
+}
+
+/* End Button */

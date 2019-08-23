@@ -1,4 +1,4 @@
-<nav class="navbar .fixed-top navbar-expand-lg ">
+<nav class="navbar navbar-expand-lg ">
     <div class="container">
         <a class="navbar-brand" href="/">DURUM</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbar1" aria-expanded="false" aria-label="Toggle navigation">
