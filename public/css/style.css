@@ -9,7 +9,7 @@ html, body, div, span, br, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, a,
 body {
 	height: auto;
 	font-family: 'Livvic', sans-serif;
-	background-color: #fceac6;
+	background-color: #eef0e9;
 }
 
 .container {
@@ -48,6 +48,10 @@ nav a:hover {
 
 /* Start Carousel */
 
+.carousel {
+	margin-bottom: 10px;
+}
+
 .d-block {
 	height: 300px; /* Размер изображения карусели по высоте */
 }
@@ -57,9 +61,12 @@ nav a:hover {
 /* Start Content */
 
 .product {
-	height: auto;
-	margin-top: 10px;
-	background-color: #eef0e9;
+	border: 1px solid #503434;
+}
+
+.product:hover {
+	box-shadow: 0 0 0 250px #fceac6 inset;
+	transition: box-shadow 700ms linear 0ms;
 }
 
 .product img {
@@ -70,7 +77,8 @@ nav a:hover {
 
 .name-product {
 	font-size: 16px;
-	color: #503434;
+	color: #a55f41;
+	font-weight: bold;
 }
 
 .product a {
@@ -78,7 +86,7 @@ nav a:hover {
 }
 
 .product a:hover {
-	color: #a55f41;
+	color: #503434;
 }
 
 .product-controls {
@@ -122,3 +130,24 @@ a.accept-product:hover {
 }
 
 /* End Button */
+
+/* Start Footer */
+
+footer {
+	margin-top: 10px;
+	padding-top: 16px;
+	height: 60px;
+	background-color: #a55f41; /* Цвет подвала */
+}
+
+.social-bar img {
+	width: 28px;
+	height: 28px;
+}
+
+.social-bar a {
+	text-decoration: none;
+	color: #503434;
+}
+
+/* End Footer */
