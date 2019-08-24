@@ -11,7 +11,7 @@
     @endif
     <form action="{{ route('products.store') }}" method="post">
         {{ csrf_field() }}
-        <label for="title" valu>Название</label><br>
+        <label for="title">Название</label><br>
         <input type="text" name="title" id="title" value="{{ old('title') }}"><br>
         <label for="description">Описание</label><br>
         <textarea name="description" id="description" cols="30" rows="10" value="{{ old('description') }}"></textarea><br>

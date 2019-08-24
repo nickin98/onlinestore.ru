@@ -17,4 +17,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/', 'MenuController@index')->name('menu');
 
+
+// Route::post('admin/products/change/{product}', 'ProductController@change')->name('products.change');
+
 Route::resource('admin/products', 'ProductController');

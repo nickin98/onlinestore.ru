@@ -20,15 +20,21 @@
                             <td>{{ $product->price }}</td>
                             <td>{{ $product->availability }}</td>
                             <td>
-                                <a href="#">
+                                <a href="{{ route('products.show', $product->id) }}">
                                     просмотреть
                                 </a>
-                                <a href="#">
+                                <a href="{{ route('products.edit', $product->id) }}">
                                     редактировать
                                 </a>
-                                <a href="#">
-                                    удалить
-                                </a>
+                                <form action="{{ route('products.destroy', $product->id) }}" method="POST">
+                                    {{ csrf_field() }}
+                                    {{ method_field('DELETE') }}
+                                    @if ($product->availability == 1)
+                                        <input type="submit" value="не показывать">
+                                    @else
+                                        <input type="submit" value="показывать">
+                                    @endif
+                                </form>
                                 <a href="{{ route('products.create') }}">
                                     создать
                                 </a>

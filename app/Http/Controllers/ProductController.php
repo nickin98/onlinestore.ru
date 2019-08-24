@@ -77,7 +77,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        return view('product.show',['product' => $product]);
     }
 
     /**
@@ -88,7 +88,8 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        $categories = Category::all();
+        return view('product.edit',['product' => $product, 'categories' => $categories]);
     }
 
     /**
@@ -100,7 +101,22 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+            'image' => 'required',
+            'category' => 'required'
+        ]);
+
+        $product->title = $request->title;
+        $product->description = $request->description;
+        $product->price = $request->price;
+        $product->image = 'img/durum.jpg';
+        $product->availability = $request->availability ? $request->availability : 0;
+        $product->category_id = '1';
+        $product->save();
+        return redirect()->route('products.index');
     }
 
     /**
@@ -111,6 +127,14 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        if ($product->availability == 1) {
+            $product->availability = 0;
+        } else {
+            $product->availability = 1;
+        }
+
+        $product->save();
+
+        return redirect()->route('products.index');
     }
 }
