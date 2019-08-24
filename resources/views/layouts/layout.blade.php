@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Site</title>
+    <title>DURUM</title>
     <meta name="keywords" content="keywords">
     <meta name="description" content="description_site">
     <!-- Bootstrap -->

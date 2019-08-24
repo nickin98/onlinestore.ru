@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Livvic&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Livvic&display=swap); /* Подключение текста */
 
 html, body, div, span, br, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, tfoot, thead, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
     margin: 0;
@@ -8,12 +8,12 @@ html, body, div, span, br, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, a,
 
 body {
 	height: auto;
-	font-family: 'Livvic', sans-serif;
-	background-color: #eef0e9;
+	font-family: 'Livvic', sans-serif; /* Задан стиль текста по умолчанию всему сайту */
+	background-color: #eef0e9; /* Задний фон */
 }
 
 .container {
-	width:1140px;
+	width:1140px; /* Ширина сайта */
 }
 
 
@@ -31,7 +31,7 @@ nav a:hover {
 }
 
 .navbar-brand {
-	font-size: 26px; /* Размер шрифта бренда */
+	font-size: 26px; /* Размер текста бренда */
 }
 
 .navbar-toggler {
@@ -48,10 +48,6 @@ nav a:hover {
 
 /* Start Carousel */
 
-.carousel {
-	margin-bottom: 10px;
-}
-
 .d-block {
 	height: 300px; /* Размер изображения карусели по высоте */
 }
@@ -60,51 +56,49 @@ nav a:hover {
 
 /* Start Content */
 
+.content {
+	margin-top: 10px; /* Отступ от карусели */
+}
+
 .product {
-	border: 1px solid #503434;
+	border: 1px solid #503434; /* Задание границы продукта */
 }
 
 .product:hover {
-	box-shadow: 0 0 0 250px #fceac6 inset;
-	transition: box-shadow 700ms linear 0ms;
-}
-
-.product img {
-	max-width: 100%;
-	height: auto;
-	display: block;
+	box-shadow: 0 0 0 250px #fceac6 inset; /* Внутреняя тень при наведении на продукт */
+	transition: box-shadow 700ms linear 0ms; /* Анимация тени */
 }
 
 .name-product {
-	font-size: 16px;
-	color: #a55f41;
-	font-weight: bold;
+	font-size: 16px; /* Размер текста в наименовании продукта */
+	color: #a55f41; /* Цвет текста */
+	font-weight: bold; /* Жирный текст */
 }
 
 .product a {
-	text-decoration: none;
+	text-decoration: none; /* Убираем нижнее подчёркивание у ссылок */
 }
 
 .product a:hover {
-	color: #503434;
+	color: #503434; /* Цвет ссылки при наведении */
 }
 
 .product-controls {
-	height: 50px;
-	margin-bottom: 10px;
-	padding: 10px 15px 0 15px;
+	height: 50px; /* Высота продукт контролера */
+	margin-bottom: 10px; /* Отступ снизу */
+	padding: 10px 15px 0 15px; /* Отступ */
 }
 
 .product-price {
-	font-size: 24px;
+	font-size: 24px; /* Размер текста цены продукта */
 }
 
 .product-money {
-	font-weight: bold;
+	font-weight: bold; /* Жирный шрифт для цены */
 }
 
 .product-to-cart {
-	margin-top: 5px;
+	margin-top: 5px; /* Отступ сверху */
 }
 
 /* End Content */
@@ -134,20 +128,20 @@ a.accept-product:hover {
 /* Start Footer */
 
 footer {
-	margin-top: 10px;
-	padding-top: 16px;
-	height: 60px;
+	margin-top: 10px; /* Отступ сверху */
+	padding-top: 16px; /* Внутрений отступ */
+	height: 60px; /* Высота футера */
 	background-color: #a55f41; /* Цвет подвала */
 }
 
 .social-bar img {
-	width: 28px;
-	height: 28px;
+	width: 28px; /* Размер логотипа социал бара */
+	height: 28px; /* Размер логотипа социал бара */
 }
 
 .social-bar a {
-	text-decoration: none;
-	color: #503434;
+	text-decoration: none; /* Убирание нижнего подчёркивания у ссылок */
+	color: #503434; /* Цвет ссылок */
 }
 
 /* End Footer */
