@@ -18,8 +18,8 @@
     <div class="container-fluid">
         <div class="row">
             <div class="admin-menu col-lg-2">
-                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Главная</a>
+                <div class="nav flex-column" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <a class="nav-link" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Главная</a>
                     <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Категории</a>
                     <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Товар</a>
                     <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Заказы</a>
@@ -38,12 +38,12 @@
                     </div>
                     <div class="table-category">
                         <table class="table table-hover table-Light">
-                            <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Категории</th>
-                                <th scope="col">Действие</th>
-                            </tr>
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Категории</th>
+                                    <th scope="col">Действие</th>
+                                </tr>
                             </thead>
                             <tbody>
                             <tr>

@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Livvic&display=swap); /* Подключение текста */
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
 html, body, div, span, br, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, tfoot, thead, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
     margin: 0;
@@ -8,8 +9,8 @@ html, body, div, span, br, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, a,
 
 body {
 	height: auto;
-	font-family: 'Livvic', sans-serif; /* Задан стиль текста по умолчанию всему сайту */
-	background-color: #CCCCCC; /* Задний фон */
+    font-family: 'Montserrat', sans-serif;
+	background-color: #eef0e9; /* Задний фон */
 }
 
 .icon-table img {
@@ -29,6 +30,8 @@ body {
 }
 
 .adm-category {
+    background-color: white;
+    color: black;
     padding: 10px 10px 10px 25px;
 }
 
@@ -36,3 +39,12 @@ body {
     width: 36px;
     height: 36px;
 }
+
+.nav-link {
+    color: #CCC;
+}
+
+.nav-link:hover {
+    color: #FFF;
+}
+
