@@ -9,8 +9,7 @@ html, body, div, span, br, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, a,
 body {
 	height: auto;
 	font-family: 'Livvic', sans-serif; /* Задан стиль текста по умолчанию всему сайту */
-	background-color: #333333; /* Задний фон */
-    margin-top: 10px;
+	background-color: #CCCCCC; /* Задний фон */
 }
 
 .icon-table img {
@@ -18,12 +17,18 @@ body {
     height: 20px;
 }
 
+.category {
+    background-color: #FFFFFF;
+    padding: 5px 10px 5px 10px;
+}
+
 .admin-menu {
     background-color: #333333;
+    padding-top: 10px;
+    height: 100vh;
 }
 
 .adm-category {
-    background-color: #999999;
     padding: 10px 10px 10px 25px;
 }
 

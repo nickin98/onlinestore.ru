@@ -27,24 +27,24 @@
                 </div>
             </div>
             <div class="col-lg-10">
-                <div class="adm-category">
-                    <div class="name-category">
-                        <div class="row">
-                            <h2 class="col-11">Категории</h2>
-                            <a src="#"><img src="images/admin/add_icon.png"></a>
+                <div class="category">
+                    <div class="adm-category">
+                        <div class="name-category">
+                            <div class="row">
+                                <h2 class="col-11">Категории</h2>
+                                <a src="#"><img src="images/admin/add_icon.png"></a>
+                            </div>
                         </div>
                     </div>
-
-                </div>
-                <div class="table-category">
-                    <table class="table table-hover table-dark">
-                        <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Категории</th>
-                            <th scope="col">Действие</th>
-                        </tr>
-                        </thead>
+                    <div class="table-category">
+                        <table class="table table-hover table-Light">
+                            <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Категории</th>
+                                <th scope="col">Действие</th>
+                            </tr>
+                            </thead>
                             <tbody>
                             <tr>
                                 <th scope="row">1</th>
@@ -76,8 +76,8 @@
                             </tbody>
                         </table>
                     </div>
-
                 </div>
+
 
             </div>
 
