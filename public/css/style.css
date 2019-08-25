@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Livvic&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Livvic&display=swap); /* Подключение текста */
 
 html, body, div, span, br, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, tfoot, thead, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
     margin: 0;
@@ -7,135 +7,141 @@ html, body, div, span, br, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, a,
 }
 
 body {
-	width:1140px;
-	margin: 0 auto;
 	height: auto;
-	font-family: 'Livvic', sans-serif;
+	font-family: 'Livvic', sans-serif; /* Задан стиль текста по умолчанию всему сайту */
+	background-color: #eef0e9; /* Задний фон */
 }
 
-/* <header> */
-	#navbar-social {
-		height: 35px;
-		padding-left: 13px;
-		padding-top: 3px;
-		background-color: #fdf4e3;
-		font-weight:bold;
-	}
-
-	#navbar-social p {
-		float: left;
-	}
-
-	#navbar-social img{
-		width: 29px;
-		height: 29px;
-		margin-left: 5px;
-	}
-
-	#navbar-logo {
-		position: relative;
-		height: 100px;
-		background-color: #000000;
-	}
-
-	#clock-icon img{
-		position: absolute;
-		width: 49px;
-		height: 49px;
-		margin: 25px 9px 0 13px;
-	}
-
-	#car-icon img{
-		position: absolute;
-		color: red;
-		width: 49px;
-		height: 49px;
-		margin: 25px 9px 0 13px;
-		margin-left: 730px;
-	}
-
-	#buy-icon img {
-		position: absolute;
-		width: 110px;
-		height: 80px;
-		margin: 10px 9px 0 13px;
-		margin-left: 988px;
-	}
-
-	#first-p {
-		position: absolute;
-		color: #fdf4e3;
-		font-size: 16px;
-		font-weight:bold;
-		margin-left: 68px;
-	}
-
-	#two-p {
-		position: absolute;
-		color: #fdf4e3;
-		font-size: 16px;
-		font-weight: bold;
-		margin-top: 25px;
-		margin-left: 790px;
+.container {
+	width:1140px; /* Ширина сайта */
 }
 
-	#navbar-logo h1 {
-		position: absolute;
-		color: #fdf4e3;
-		font-size: 72px;
-		font-weight:bold;
-		margin-left: 458px;
-	}
-/* </header> */
 
-/* <nav> */
-	nav ul {
-		list-style: none;
-	}
-
-	nav li {
-		display: inline;
-		height: 39px;
-		background-color: #fdf4e3;
-		text-align:  center;
-		font-size: 21px;
-		font-weight:bold;
-		border: 2px solid black
-	}
-
-
-	nav .row a {
-		text-decoration: none;
-		color: #000000;
-
-	}
-
-	nav .row a:hover{
-		color: #FF0033;
-	}
-
-
-/* </nav> */
-
-/* <main> */
-
-
-main img{
-	max-width: 100%;
-	height: auto;
-	display: block;
+/* Start Navigation */
+nav {
+	background-color: #a55f41; /* Цвет меню */
 }
 
-/* </main> */
-
-/* <article> */
-
-article {
-	float: left;
+nav a {
+	color: #eef0e9; /* Цвет ссылок */
 }
 
-/* </article> */
+nav a:hover {
+	color: #fceac6; /* Цвет ссылок при наведении */
+}
 
-/* <footer> */
+.navbar-brand {
+	font-size: 26px; /* Размер текста бренда */
+}
 
-/* </footer> */
+.navbar-toggler {
+	background-color: #503434; /* Изменение фона кнопки на мобильных устройствах */
+}
+
+.navbar-toggler-icon {
+	height: 25px; /* Размер иконки по высоте на моб. устройствах */
+	width:25px; /* Размер иконки по высоте на моб. устройствах */
+	margin-top: 3px; /* Отступ иконки сверху на моб. устройствах */
+	color: #eef0e9; /* Цвет иконки на моб. устройствах */
+}
+/* End Navigation */
+
+/* Start Carousel */
+
+.d-block {
+	height: 300px; /* Размер изображения карусели по высоте */
+}
+
+/* End Carousel */
+
+/* Start Content */
+
+.content {
+	margin-top: 10px; /* Отступ от карусели */
+}
+
+.product {
+	border: 1px solid #503434; /* Задание границы продукта */
+}
+
+.product:hover {
+	box-shadow: 0 0 0 250px #fceac6 inset; /* Внутреняя тень при наведении на продукт */
+	transition: box-shadow 700ms linear 0ms; /* Анимация тени */
+}
+
+.name-product {
+	font-size: 16px; /* Размер текста в наименовании продукта */
+	color: #a55f41; /* Цвет текста */
+	font-weight: bold; /* Жирный текст */
+}
+
+.product a {
+	text-decoration: none; /* Убираем нижнее подчёркивание у ссылок */
+}
+
+.product a:hover {
+	color: #503434; /* Цвет ссылки при наведении */
+}
+
+.product-controls {
+	height: 50px; /* Высота продукт контролера */
+	margin-bottom: 10px; /* Отступ снизу */
+	padding: 10px 15px 0 15px; /* Отступ */
+}
+
+.product-price {
+	font-size: 24px; /* Размер текста цены продукта */
+}
+
+.product-money {
+	font-weight: bold; /* Жирный шрифт для цены */
+}
+
+.product-to-cart {
+	margin-top: 5px; /* Отступ сверху */
+}
+
+/* End Content */
+
+/* Start Button */
+
+a.accept-product{
+	color: #503434;
+	padding: 10px 10px;
+	width: 100px;
+	text-decoration:none;
+	text-align:center;
+	background-image: linear-gradient(to left,transparent,transparent 50%,#a55f41 50%,#a55f41);
+	background-position: 100% 0;
+	background-size: 200% 100%;
+	transition: all .25s ease-in;
+	font: 400 18px tahoma;
+	border: 1px solid #503434;
+}
+a.accept-product:hover {
+	background-position: 0 0;
+	color:#503434;
+}
+
+/* End Button */
+
+/* Start Footer */
+
+footer {
+	margin-top: 10px; /* Отступ сверху */
+	padding-top: 16px; /* Внутрений отступ */
+	height: 60px; /* Высота футера */
+	background-color: #a55f41; /* Цвет подвала */
+}
+
+.social-bar img {
+	width: 28px; /* Размер логотипа социал бара */
+	height: 28px; /* Размер логотипа социал бара */
+}
+
+.social-bar a {
+	text-decoration: none; /* Убирание нижнего подчёркивания у ссылок */
+	color: #503434; /* Цвет ссылок */
+}
+
+/* End Footer */

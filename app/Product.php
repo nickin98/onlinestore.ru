@@ -24,8 +24,9 @@ class Product extends Model
         $path = $request->file('image')->store('public/images');
         $full_path = storage_path('app') . '/' . $path;
         $image = \Image::make($full_path);
-        $image->resize(null, 150, function ($constraint) {
-            $constraint->aspectRatio();
+        $image->fit(640, 640, function ($img) {
+//            $img->aspectRatio();
+            $img->upsize();
         });
         $image->save($full_path);
 

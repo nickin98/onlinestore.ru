@@ -11,13 +11,21 @@
 |
 */
 
+Route::get('/', function () {
+    return view('index');
+});
+
+Route::get('/admin', function () {
+    return view('admin');
+});
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/', 'MenuController@index')->name('menu');
-
-
-// Route::post('admin/products/change/{product}', 'ProductController@change')->name('products.change');
-
 Route::resource('admin/products', 'ProductController');
+Route::resource('admin/categories', 'CategoryController');
+Route::resource('admin/orders', 'OrderController', ['except' => [
+    'create', 'store', 'update'
+]]);
