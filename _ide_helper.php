@@ -3,7 +3,7 @@
 
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.5.48 on 2019-08-23 12:50:54.
+ * Generated for Laravel 5.5.48 on 2019-08-24 13:11:47.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -13773,6 +13773,75 @@ namespace Illuminate\Support\Facades {
  
 }
 
+namespace Intervention\Image\Facades { 
+
+    /**
+     * 
+     *
+     */ 
+    class Image {
+        
+        /**
+         * Overrides configuration settings
+         *
+         * @param array $config
+         * @return self 
+         * @static 
+         */ 
+        public static function configure($config = array())
+        {
+                        /** @var \Intervention\Image\ImageManager $instance */
+                        return $instance->configure($config);
+        }
+        
+        /**
+         * Initiates an Image instance from different input types
+         *
+         * @param mixed $data
+         * @return \Intervention\Image\Image 
+         * @static 
+         */ 
+        public static function make($data)
+        {
+                        /** @var \Intervention\Image\ImageManager $instance */
+                        return $instance->make($data);
+        }
+        
+        /**
+         * Creates an empty image canvas
+         *
+         * @param int $width
+         * @param int $height
+         * @param mixed $background
+         * @return \Intervention\Image\Image 
+         * @static 
+         */ 
+        public static function canvas($width, $height, $background = null)
+        {
+                        /** @var \Intervention\Image\ImageManager $instance */
+                        return $instance->canvas($width, $height, $background);
+        }
+        
+        /**
+         * Create new cached image and run callback
+         * (requires additional package intervention/imagecache)
+         *
+         * @param \Closure $callback
+         * @param int $lifetime
+         * @param boolean $returnObj
+         * @return \Image 
+         * @static 
+         */ 
+        public static function cache($callback, $lifetime = null, $returnObj = false)
+        {
+                        /** @var \Intervention\Image\ImageManager $instance */
+                        return $instance->cache($callback, $lifetime, $returnObj);
+        }
+         
+    }
+ 
+}
+
 namespace Barryvdh\Debugbar { 
 
     /**
@@ -16675,6 +16744,8 @@ namespace  {
     class Validator extends \Illuminate\Support\Facades\Validator {}
 
     class View extends \Illuminate\Support\Facades\View {}
+
+    class Image extends \Intervention\Image\Facades\Image {}
 
     class Debugbar extends \Barryvdh\Debugbar\Facade {}
  

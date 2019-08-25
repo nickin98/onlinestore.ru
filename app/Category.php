@@ -12,4 +12,9 @@ class Category extends Model
     public function products() {
         return $this->hasMany('App\Product');
     }
+
+    public static function getCategoryIdByTitle($title) {
+        $categoryId = Category::where('title', $title)->first()->id;
+        return $categoryId;
+    }
 }

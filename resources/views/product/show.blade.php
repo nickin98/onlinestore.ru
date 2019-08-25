@@ -18,15 +18,19 @@
             </tr>
             <tr>
                 <th>Картинка</th>
-                <td>{{ $product->image }}</td>
+                <td><img src="{{ $image }}" alt="{{ $product->title }}"></td>
             </tr>
             <tr>
                 <th>Доступность</th>
-                <td>{{ $product->availability }}</td>
+                @if ($product->availability)
+                    <td>Доступно</td>
+                @else
+                    <td>Недоступно</td>
+                @endif
             </tr>
             <tr>
                 <th>Категория</th>
-                <td>{{ $product->category_id }}</td>
+                <td>{{ $categoryTitle }}</td>
             </tr>
         </table>
     </div>

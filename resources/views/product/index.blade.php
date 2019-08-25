@@ -18,7 +18,11 @@
                         <tr>
                             <td>{{ $product->title }}</td>
                             <td>{{ $product->price }}</td>
-                            <td>{{ $product->availability }}</td>
+                            @if ($product->availability)
+                                <td>Доступно</td>
+                            @else
+                                <td>Недоступно</td>
+                            @endif
                             <td>
                                 <a href="{{ route('products.show', $product->id) }}">
                                     просмотреть

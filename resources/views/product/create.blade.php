@@ -2,14 +2,14 @@
 
 @section('content')
     @if ($errors->any())
-        <div class="bg-danger">
+        <div class="alert alert-danger">
             @foreach($errors->all() as $error)
                 {{ $error }}
                 <br>
             @endforeach
         </div>
     @endif
-    <form action="{{ route('products.store') }}" method="post">
+    <form action="{{ route('products.store') }}" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}
         <label for="title">Название</label><br>
         <input type="text" name="title" id="title" value="{{ old('title') }}"><br>
@@ -20,7 +20,11 @@
         <label for="image">Картинка</label><br>
         <input type="file" name="image" id="image"><br>
         <label for="availability">Доступность</label><br>
-        <input type="checkbox" name="availability" id="availability" value="1"><br>
+        @if (old('availability') == 1)
+            <input type="checkbox" name="availability" id="availability" value="1" checked><br>
+        @else
+            <input type="checkbox" name="availability" id="availability" value="1"><br>
+        @endif
         <label for="category" >Категория</label><br>
         <select name="category" id="category"><br>
             @foreach($categories as $category)

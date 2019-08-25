@@ -39,32 +39,27 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'title' => 'required',
+            'title' => 'required|max:50',
             'description' => 'required',
-            'price' => 'required',
-            'image' => 'required',
-            'availability' => 'required',
+            'price' => 'required|integer',
+            'image' => 'image|mimes:jpeg,jpg,png,gif,svg|required|max:2048',
+            'availability' => 'boolean',
             'category' => 'required'
         ]);
-
-//        Product::create([
-//            'title' => $request->title,
-//            'description' => $request->description,
-//            'price' => $request->price,
-//            'image' => 'img/durum.jpg',
-//            'availability' => $request->availability,
-//            'category_id' => 1
-//        ]);
 
         $product = new Product();
         $product->title = $request->title;
         $product->description = $request->description;
         $product->price = $request->price;
-        $product->image = 'img/durum.jpg';
         $product->availability = $request->availability;
-        $product->category_id = '1';
-        $product->save();
+        $product->category_id = Category::getCategoryIdByTitle($request->category);
 
+        $path = $product->saveImage($request);
+
+        $parts_path = preg_split("#[//\\\]#", $path);
+        $product->image = array_pop($parts_path);
+
+        $product->save();
 
         return redirect()->route('products.index');
     }
@@ -77,7 +72,9 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        return view('product.show',['product' => $product]);
+        $categoryTitle = Category::where('id', $product->category_id)->first()->title;
+        $image = asset('storage/images/' . $product->image);
+        return view('product.show',['product' => $product, 'image' => $image, 'categoryTitle' => $categoryTitle]);
     }
 
     /**
@@ -88,8 +85,9 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
+        $image = asset('storage/images/' . $product->image);
         $categories = Category::all();
-        return view('product.edit',['product' => $product, 'categories' => $categories]);
+        return view('product.edit',['product' => $product, 'categories' => $categories, 'image' => $image]);
     }
 
     /**
@@ -102,20 +100,29 @@ class ProductController extends Controller
     public function update(Request $request, Product $product)
     {
         $this->validate($request, [
-            'title' => 'required',
+            'title' => 'required|max:50',
             'description' => 'required',
-            'price' => 'required',
-            'image' => 'required',
+            'price' => 'required|integer',
+            'image' => 'image|mimes:jpeg,jpg,png,gif,svg|max:2048',
+            'availability' => 'boolean',
             'category' => 'required'
         ]);
 
         $product->title = $request->title;
         $product->description = $request->description;
         $product->price = $request->price;
-        $product->image = 'img/durum.jpg';
         $product->availability = $request->availability ? $request->availability : 0;
-        $product->category_id = '1';
+        $product->category_id = Category::getCategoryIdByTitle($request->category);
+
+        if (!empty($request->image) and isset($request->image)) {
+            $path = $product->saveImage($request);
+
+            $parts_path = preg_split("#[//\\\]#", $path);
+            $product->image = array_pop($parts_path);
+        }
+
         $product->save();
+
         return redirect()->route('products.index');
     }
 
