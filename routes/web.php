@@ -23,3 +23,9 @@ Route::get('/admin', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('admin/products', 'ProductController');
+Route::resource('admin/categories', 'CategoryController');
+Route::resource('admin/orders', 'OrderController', ['except' => [
+    'create', 'store', 'update'
+]]);

@@ -8,7 +8,7 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- CSS -->
-    <link  href="css/astyle.css" rel="stylesheet"/>
+    <link  href="/css/astyle.css" rel="stylesheet"/>
     <!-- JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -32,7 +32,7 @@
                         <div class="name-category">
                             <div class="row">
                                 <h2 class="col-11">Категории</h2>
-                                <a src="#"><img src="images/admin/add_icon.png"></a>
+                                <a href="{{ route('categories.create') }}"><img src="/images/admin/add_icon.png"></a>
                             </div>
                         </div>
                     </div>
@@ -42,37 +42,36 @@
                                 <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">Категории</th>
+                                    <th scope="col">Доступность</th>
                                     <th scope="col">Действие</th>
                                 </tr>
                             </thead>
                             <tbody>
+                            @foreach($categories as $category)
                             <tr>
-                                <th scope="row">1</th>
-                                <td>Шаурма</td>
+                                <th scope="row">{{ $loop->iteration }}</th>
+                                <td>{{ $category->title }}</td>
+                                @if ($category->availability)
+                                    <td>Доступно</td>
+                                @else
+                                    <td>Недоступно</td>
+                                @endif
                                 <td class="icon-table">
-                                    <a src="#"><img src="images/admin/see_icon.png"></a>
-                                    <a src="#"><img src="images/admin/edit_icon.png"></a>
-                                    <a src="#"><img src="images/admin/delete_icon.png"></a>
+                                    <a href="{{ route('categories.show', $category->id) }}"><img src="/images/admin/see_icon.png"></a>
+                                    <a href="{{ route('categories.edit', $category->id) }}"><img src="/images/admin/edit_icon.png"></a>
+{{--                                    <a href="{{ route('categories.destroy', $category->id) }}"><img src="/images/admin/delete_icon.png"></a>--}}
+                                    <form action="{{ route('categories.destroy', $category->id) }}" method="POST">
+                                        {{ csrf_field() }}
+                                        {{ method_field('DELETE') }}
+                                        @if ($category->availability == 1)
+                                            <input type="submit" value="не показывать">
+                                        @else
+                                            <input type="submit" value="показывать">
+                                        @endif
+                                    </form>
                                 </td>
                             </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Вафли</td>
-                                <td class="icon-table">
-                                    <a src="#"><img src="images/admin/see_icon.png"></a>
-                                    <a src="#"><img src="images/admin/edit_icon.png"></a>
-                                    <a src="#"><img src="images/admin/delete_icon.png"></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Напитки</td>
-                                <td class="icon-table">
-                                    <a src="#"><img src="images/admin/see_icon.png"></a>
-                                    <a src="#"><img src="images/admin/edit_icon.png"></a>
-                                    <a src="#"><img src="images/admin/delete_icon.png"></a>
-                                </td>
-                            </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>

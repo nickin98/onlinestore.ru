@@ -19,4 +19,17 @@ class Product extends Model
     public function orders() {
         return $this->belongsToMany('App\Order');
     }
+
+    public function saveImage($request) {
+        $path = $request->file('image')->store('public/images');
+        $full_path = storage_path('app') . '/' . $path;
+        $image = \Image::make($full_path);
+        $image->fit(640, 640, function ($img) {
+//            $img->aspectRatio();
+            $img->upsize();
+        });
+        $image->save($full_path);
+
+        return $path;
+    }
 }
