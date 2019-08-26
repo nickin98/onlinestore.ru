@@ -13,6 +13,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call(RoleTableSeeder::class);
+
         factory(App\User::class, 20)->create()->each(function($user) {
             if (random_int(0,2)) {
                 Customer::create([
