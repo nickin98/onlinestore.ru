@@ -76,7 +76,7 @@
                         </table>
                     </div>
                 </div>
-
+                {{ $categories->links() }}
 
             </div>
 

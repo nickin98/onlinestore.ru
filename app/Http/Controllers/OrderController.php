@@ -14,7 +14,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = Order::all();
+        $orders = Order::paginate(10);;
         return view('order.index', ['categories' => $orders]);
     }
 
@@ -40,6 +40,6 @@ class OrderController extends Controller
         $order->status = $request->status;
         $order->save();
 
-        return redirect()->route('categories.index');
+        return redirect()->back();;
     }
 }
