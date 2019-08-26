@@ -76,7 +76,7 @@
                         </table>
                     </div>
                 </div>
-
+                {{ $categories->links('vendor.pagination.bootstrap-4') }}
 
             </div>
 
