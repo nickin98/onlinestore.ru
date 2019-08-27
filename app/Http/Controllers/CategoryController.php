@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+
+        $this->middleware('admin');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +20,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
+        $categories = Category::paginate(2);
         return view('category.index', ['categories' => $categories]);
     }
 
@@ -69,7 +75,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        return view('product.edit',['category' => $category]);
+        return view('category.edit',['category' => $category]);
     }
 
     /**
@@ -110,6 +116,6 @@ class CategoryController extends Controller
 
         $category->save();
 
-        return redirect()->route('categories.index');
+        return redirect()->back();
     }
 }

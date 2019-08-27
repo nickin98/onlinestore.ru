@@ -33,4 +33,10 @@ class User extends Authenticatable
     public function customer() {
         return $this->hasOne('App\Customer');
     }
+
+    // Возвращает "обратное отношение" один к одному между таблицами users и roles
+    // Данное "отношение" используется в коде для получения единственного существующего Role соответствующего User,
+    public function role() {
+        return $this->belongsTo('App\Role');
+    }
 }

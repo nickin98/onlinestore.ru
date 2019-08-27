@@ -8,6 +8,13 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+
+        $this->middleware('admin');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +22,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        $products= Product::paginate(8);
+//        $products = Product::all();
         return view('product.index', ['products' => $products]);
     }
 
@@ -142,6 +150,6 @@ class ProductController extends Controller
 
         $product->save();
 
-        return redirect()->route('products.index');
+        return redirect()->back();
     }
 }
