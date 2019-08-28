@@ -9,9 +9,9 @@ class OrderController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->except('register');
 
-        $this->middleware('admin');
+        $this->middleware('admin')->except('register');
     }
     /**
      * Display a listing of the resource.
@@ -47,5 +47,9 @@ class OrderController extends Controller
         $order->save();
 
         return redirect()->back();;
+    }
+
+    public function register() {
+
     }
 }

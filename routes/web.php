@@ -11,12 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-})->name('index');
+Route::get('/', 'MenuController@index')->name('index');
 
 Route::get('/admin', function () {
     return view('admin');
+});
+
+Route::get('/cart', function () {
+    return view('cart');
+});
+
+Route::get('/order', function () {
+    return view('order');
 });
 
 
