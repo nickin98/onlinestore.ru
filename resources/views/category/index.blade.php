@@ -1,11 +1,6 @@
 @extends('admin')
 
 @section('content')
-<div class="content-admin">
-    <div class="row">
-
-        <div class="col-lg-10">
-            <div class="category">
                 <div class="adm-category">
                     <div class="name-category">
                         <div class="row">
@@ -14,7 +9,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="table-category">
+                <div class="table">
                     <table class="table table-hover table-Light">
                         <thead class="thead-dark">
                         <tr>
@@ -53,9 +48,5 @@
                         </tbody>
                     </table>
                 </div>
-            </div>
             {{ $categories->links('vendor.pagination.bootstrap-4') }}
-        </div>
-    </div>
-</div>
 @endsection
