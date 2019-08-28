@@ -1,4 +1,4 @@
-@extends('product.layouts.layout')
+@extends('admin')
 
 @section('content')
     <div class="container">
