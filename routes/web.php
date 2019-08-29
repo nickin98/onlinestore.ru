@@ -25,6 +25,8 @@ Route::get('/order', function () {
     return view('order');
 });
 
+Route::post('/send', 'OrderController@register')->name('send');
+
 
 Auth::routes();
 
