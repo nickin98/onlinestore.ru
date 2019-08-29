@@ -20,9 +20,9 @@
             <div class="admin-menu col-lg-2">
                 <div class="nav flex-column" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                     <a class="nav-link" href="/admin">Главная</a>
-                    <a class="nav-link" href="categories">Категории</a>
-                    <a class="nav-link" href="products">Товар</a>
-                    <a class="nav-link" href="admin/orders" >Заказы</a>
+                    <a class="nav-link" href="/admin/categories">Категории</a>
+                    <a class="nav-link" href="/admin/products">Товар</a>
+                    <a class="nav-link" href="/admin/orders" >Заказы</a>
                     <a class="nav-link" href="/">Выйти из админ панели</a>
                 </div>
             </div>
