@@ -1,17 +1,22 @@
-@extends('product.layouts.layout')
+@extends('admin')
 
 @section('content')
-    <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
+    <div class="adm-category">
+        <div class="name-category">
+            <div class="row">
+                <h2 class="col-11">Товары</h2>
+                <a href="{{ route('categories.create') }}"><img src="/images/admin/add_icon.png"></a>
+            </div>
+        </div>
+    </div>
                 <table class="table">
                     <thead class="thead-dark">
-                    <tr>
-                        <th>Название</th>
-                        <th>Цена</th>
-                        <th>Доступность</th>
-                        <th>Действия</th>
-                    </tr>
+                        <tr>
+                            <th>Название</th>
+                            <th>Цена</th>
+                            <th>Доступность</th>
+                            <th>Действия</th>
+                        </tr>
                     </thead>
                     <tbody>
                     @foreach($products as $product)
@@ -49,7 +54,4 @@
                 </table>
 
                 {{ $products->links('vendor.pagination.bootstrap-4') }}
-            </div>
-        </div>
-    </div>
 @endsection
