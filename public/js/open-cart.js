@@ -4,6 +4,9 @@ var productsHTML = getCartProducts();
 
 if (productsHTML) {
     document.querySelector('.row').innerHTML = productsHTML;
+}
+
+if (openCart()) {
     document.querySelector('.content').innerHTML += '<a href="/order">Оформить заказ</a>';
 }
 

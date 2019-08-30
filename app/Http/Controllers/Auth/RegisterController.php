@@ -49,7 +49,7 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'phone' => 'required|string|max:255',
+            'phone' => 'required|string|max:255|unique:users',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
         ]);
@@ -63,11 +63,26 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'phone' => $data['phone'],
-            'email' => $data['email'],
+        $phone = $data['phone'];
+        $email = $data['email'];
+
+        $user = User::create([
+            'phone' => $phone,
+            'email' => $email,
             'password' => bcrypt($data['password']),
             'role_id' => 1
         ]);
+
+        $customer = Customer::where([
+            ['phone', '=', $phone],
+            ['email', '=', $email]
+        ])->first();
+
+        if ($customer != null) {
+            $customer->user_id = $user->id;
+            $customer->save();
+        }
+
+        return $user;
     }
 }

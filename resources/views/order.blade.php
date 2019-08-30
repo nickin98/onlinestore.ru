@@ -14,10 +14,12 @@
             {{ csrf_field() }}
             <label for="name" style="display: block">Имя</label>
             <input type="text" id="name" name="name" style="display: block" value="{{ old('name') }}">
-            <label for="phone" style="display: block">Телефон</label>
-            <input type="text" id="phone" name="phone" value="{{ old('phone') }}" style="display: block">
-            <label for="email" style="display: block">Email</label>
-            <input type="text" id="email" name="email" style="display: block" value="{{ old('email') }}">
+            @if (Auth::guest())
+                <label for="phone" style="display: block">Телефон</label>
+                <input type="text" id="phone" name="phone" value="{{ old('phone') }}" style="display: block">
+                <label for="email" style="display: block">Email</label>
+                <input type="text" id="email" name="email" style="display: block" value="{{ old('email') }}">
+            @endif
             <label for="street" style="display: block">Улица</label>
             <input type="text" id="street" name="street" style="display: block" value="{{ old('street') }}">
             <label for="house" style="display: block">Дом</label>

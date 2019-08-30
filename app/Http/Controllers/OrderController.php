@@ -53,40 +53,50 @@ class OrderController extends Controller
     }
 
     public function register(Request $request) {
-        $this->validate($request, [
+
+        $rules = [
             'name' => 'required|max:50|string',
-            'phone' => 'required',
             'street' => 'required|string|max:100',
             'house' => 'required',
             'payment' => 'required|integer',
-            'email' => 'required|email',
             'cart' => 'required|json',
             'delivery' => 'required',
             'date' => 'bail|required_if:delivery, 2|nullable|date',
             'time' => 'bail|required_if:delivery, 2|nullable|date_format:H:i',
             'flat' => 'nullable',
-        ]);
+        ];
+
+        if (\Auth::guest()) {
+            $rules['phone'] = 'required';
+            $rules['email'] = 'required|email';
+        }
+
+        $this->validate($request, $rules);
 
 
         try {
             DB::beginTransaction();
 
-            $phone = $request->phone;
-            $email = $request->email;
+            if (\Auth::guest()) {
+                $phone = $request->phone;
+                $email = $request->email;
 
-            $customer = Customer::where([
-                ['phone', '=', $phone],
-                ['email', '=', $email]
-            ])->first();
+                $customer = Customer::where([
+                    ['phone', '=', $phone],
+                    ['email', '=', $email]
+                ])->first();
 
-            if ($customer == null) {
-                $customer = new Customer();
-                $customer->phone = $request->phone;
-                $customer->email = $request->email;
-                $customer->save();
+                if ($customer == null) {
+                    $customer = new Customer();
+                    $customer->phone = $request->phone;
+                    $customer->email = $request->email;
+                    $customer->save();
+                }
+
+                $customerId = $customer->id;
+            } else {
+                $customerId = \Auth::user()->customer()->first()->id;
             }
-
-            $customerId = $customer->id;
 
             $order = new Order();
             $order->customer_name = $request->name;

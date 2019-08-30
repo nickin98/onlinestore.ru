@@ -18,7 +18,7 @@
 								от <span class="product-money">{{ $product->price }} ₽</span>
 							</div>
 							<div class="product-to-cart ml-auto">
-								<a href="#" class="accept-product" data-id="{{ $product->id }}">Выбрать</a>
+								<a class="accept-product" data-id="{{ $product->id }}">Выбрать</a>
 							</div>
 						</div>
 					</div>
