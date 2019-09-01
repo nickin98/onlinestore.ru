@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Customer;
 use App\Order;
 use App\OrderProduct;
+use App\Product;
 use Illuminate\Http\Request;
 use DB;
+use mysql_xdevapi\Exception;
 
 class OrderController extends Controller
 {
@@ -55,19 +57,20 @@ class OrderController extends Controller
     public function register(Request $request) {
 
         $rules = [
-            'name' => 'required|max:50|string',
-            'street' => 'required|string|max:100',
-            'house' => 'required',
-            'payment' => 'required|integer',
-            'cart' => 'required|json',
-            'delivery' => 'required',
+            'name' => 'required|max:191|string',
+            'street' => 'required|string|max:191',
+            'house' => 'required|string|max:191',
+            'payment' => 'required|integer|digits_between:1,3',
+            'cart' => 'bail|required|json|exist_product',
+            'delivery' => 'required|digits_between:1,2',
             'date' => 'bail|required_if:delivery, 2|nullable|date',
             'time' => 'bail|required_if:delivery, 2|nullable|date_format:H:i',
-            'flat' => 'nullable',
+            'flat' => 'nullable|string|max:191',
+            'comment' => 'nullable|string|max:500'
         ];
 
         if (\Auth::guest()) {
-            $rules['phone'] = 'required';
+            $rules['phone'] = 'required|regex:#\+7\(\d{3}\) \d{3}-\d{2}-\d{2}#';
             $rules['email'] = 'required|email';
         }
 
@@ -123,7 +126,12 @@ class OrderController extends Controller
 
             $products = json_decode($request->cart, true);
 
+            $productIds = $productIds = Product::all()->pluck('id')->toArray();
+
             foreach($products as $productId => $product) {
+                if (!array_has($productIds, $productId)) {
+                    throw new \Exception('Продукта с id=' . $productId. ' нет в базе данных');
+                }
                 $orderProduct = new OrderProduct();
                 $orderProduct->order_id = $orderId;
                 $orderProduct->product_id = $productId;
