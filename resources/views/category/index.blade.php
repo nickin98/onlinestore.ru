@@ -29,17 +29,18 @@
                                 @else
                                     <td>Недоступно</td>
                                 @endif
-                                <td class="icon-table">
-                                    <a href="{{ route('categories.show', $category->id) }}"><img src="/images/admin/see_icon.png"></a>
-                                    <a href="{{ route('categories.edit', $category->id) }}"><img src="/images/admin/edit_icon.png"></a>
+                                <td class="icon-table row">
+                                    <a class="col-1" href="{{ route('categories.show', $category->id) }}"><img class="rounded mx-auto d-block" src="/images/admin/see_icon.png"></a>
+                                    <a class="col-1" href="{{ route('categories.edit', $category->id) }}"><img src="/images/admin/edit_icon.png"></a>
+                                    <input class="col-1" type="submit" value="" id="delButton" />
                                     {{--                            <a href="{{ route('categories.destroy', $category->id) }}"><img src="/images/admin/delete_icon.png"></a>--}}
-                                    <form action="{{ route('categories.destroy', $category->id) }}" method="POST">
+                                    <form class="col-2" action="{{ route('categories.destroy', $category->id) }}" method="POST">
                                         {{ csrf_field() }}
                                         {{ method_field('DELETE') }}
                                         @if ($category->availability == 1)
-                                            <input type="submit" value="не показывать">
+                                            <input type="submit" class="btn btn-secondary" value="Не отображать">
                                         @else
-                                            <input type="submit" value="показывать">
+                                            <input type="submit" class="btn btn-secondary" value="Отображать">
                                         @endif
                                     </form>
                                 </td>
