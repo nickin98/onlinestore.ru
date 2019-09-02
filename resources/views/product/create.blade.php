@@ -11,13 +11,13 @@
     @endif
     <form action="{{ route('products.store') }}" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}
-        <label for="title">Название</label><br>
+        <label for="title">Наименование</label><br>
         <input type="text" name="title" id="title" value="{{ old('title') }}"><br>
         <label for="description">Описание</label><br>
         <textarea name="description" id="description" cols="30" rows="10" value="{{ old('description') }}"></textarea><br>
         <label for="price">Цена</label><br>
         <input type="text" name="price" id="price" value="{{ old('price') }}"><br>
-        <label for="image">Картинка</label><br>
+        <label for="image">Изображение</label><br>
         <input type="file" name="image" id="image"><br>
         <label for="availability">Доступность</label><br>
         @if (old('availability') == 1)
