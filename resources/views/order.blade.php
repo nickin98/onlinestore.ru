@@ -41,17 +41,17 @@
             <div id="datetime" style="display: none">
                 <input type="text" id="date" readonly="true" name="date">
                 <select name="time" id="time">
-                    <option>10:00</option>
-                    <option>11:00</option>
-                    <option>12:00</option>
-                    <option>13:00</option>
-                    <option>14:00</option>
-                    <option>15:00</option>
-                    <option>16:00</option>
-                    <option>17:00</option>
-                    <option>18:00</option>
-                    <option>19:00</option>
-                    <option>20:00</option>
+{{--                    <option>10:00</option>--}}
+{{--                    <option>11:00</option>--}}
+{{--                    <option>12:00</option>--}}
+{{--                    <option>13:00</option>--}}
+{{--                    <option>14:00</option>--}}
+{{--                    <option>15:00</option>--}}
+{{--                    <option>16:00</option>--}}
+{{--                    <option>17:00</option>--}}
+{{--                    <option>18:00</option>--}}
+{{--                    <option>19:00</option>--}}
+{{--                    <option>20:00</option>--}}
                 </select>
             </div>
             <label for="comment" style="display: block">Комментарий</label>

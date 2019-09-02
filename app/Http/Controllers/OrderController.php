@@ -144,6 +144,26 @@ class OrderController extends Controller
             DB::rollBack();
         }
 
-        return redirect()->route('index');
+//        return redirect()->route('index');
+        return view('success');
+    }
+
+    public function unfinishedOrders() {
+        $orders = Order::where('status', '=', 1)->orWhere('status', '=', 2)->get();
+        return view('untreated-orders', ['orders' => $orders]);
+    }
+
+    public function changeStatus(Request $request) {
+        $request->validate([
+            'status' => 'required',
+            'id' => 'required',
+        ]);
+
+        $orderId = $request->id;
+        $orderStatus = $request->status;
+        $order = Order::where('id', $orderId)->first();
+        $order->status = $orderStatus;
+        $order->save();
+        return 'success' . $orderId . $orderStatus . $order;
     }
 }

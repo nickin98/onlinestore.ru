@@ -42,6 +42,7 @@ function hideChoiceTime() {
 $.datepicker.setDefaults( $.datepicker.regional[ "ru" ] );
 
 $("#date").datepicker({
+    onSelect: futureTime,
     minDate: new Date(),
     maxDate: "+4d",
 });

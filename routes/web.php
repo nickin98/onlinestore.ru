@@ -17,6 +17,8 @@ Route::get('/admin', function () {
     return view('admin');
 });
 
+Route::get('admin/new', 'OrderController@unfinishedOrders')->name('new');
+
 Route::get('/cart', function () {
     return view('cart');
 });
@@ -26,6 +28,8 @@ Route::get('/order', function () {
 });
 
 Route::post('/send', 'OrderController@register')->name('send');
+
+Route::post('/change', 'OrderController@changeStatus')->name('changeStatus');
 
 
 Auth::routes();
