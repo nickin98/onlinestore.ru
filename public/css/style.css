@@ -145,3 +145,12 @@ footer {
 }
 
 /* End Footer */
+
+/* Start Paginator */
+
+.page-item.active .page-link {
+	background-color: #a55f41;
+	border-color: #a55f41;
+}
+
+/* End Paginator */

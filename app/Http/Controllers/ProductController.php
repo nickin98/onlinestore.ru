@@ -47,7 +47,7 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'title' => 'required|max:50',
+            'title' => 'required|string|max:50',
             'description' => 'required',
             'price' => 'required|integer',
             'image' => 'image|mimes:jpeg,jpg,png,gif,svg|required|max:2048',
