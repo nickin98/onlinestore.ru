@@ -21,6 +21,8 @@
     <script src="{{ asset('js/datepicker-ru.js') }}"></script>
 </head>
 <body>
+    <a href="/admin">Админка</a>
+    <a href="/cart">Корзина</a>
     @include('layouts.nav')
     @include('layouts.carousel')
     @yield('content')

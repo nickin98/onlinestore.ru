@@ -1,4 +1,4 @@
-@extends('product.layouts.layout')
+@extends('admin')
 
 @section('content')
     @if ($errors->any())
@@ -9,29 +9,45 @@
             @endforeach
         </div>
     @endif
-    <form action="{{ route('products.store') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('products.store') }}" method="post" enctype="multipart/form-data" class="form-horizontal">
         {{ csrf_field() }}
-        <label for="title">Наименование</label><br>
-        <input type="text" name="title" id="title" value="{{ old('title') }}"><br>
-        <label for="description">Описание</label><br>
-        <textarea name="description" id="description" cols="30" rows="10" value="{{ old('description') }}"></textarea><br>
-        <label for="price">Цена</label><br>
-        <input type="text" name="price" id="price" value="{{ old('price') }}"><br>
-        <label for="image">Изображение</label><br>
-        <input type="file" name="image" id="image"><br>
-        <label for="availability">Доступность</label><br>
-        @if (old('availability') == 1)
-            <input type="checkbox" name="availability" id="availability" value="1" checked><br>
-        @else
-            <input type="checkbox" name="availability" id="availability" value="1"><br>
-        @endif
-        <label for="category" >Категория</label><br>
-        <select name="category" id="category"><br>
-            @foreach($categories as $category)
+        <h2>Добавление товара</h2>
+        <div class="form-group">
+            <label for="title">Наименование товара</label>
+            <input type="text" name="title" class="form-control" id="title" value="{{ old('title') }}" placeholder="Например: Шаурма по маракански, Шаурма по Армянски">
+        </div>
+        <div class="form-group">
+            <label for="category" >Категория товара</label><br>
+            <select class="custom-select my-1 mr-sm-2" name="category" id="category"><br>
+                @foreach($categories as $category)
                     <option>{{ $category->title }}</option>
-            @endforeach
-        </select>
-        <input type="submit">
+                @endforeach
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="description">Описание</label>
+            <textarea class="form-control" rows="4" name="description" id="description" cols="30" rows="10" value="{{ old('description') }}" placeholder="Например: Сочная, острая и армянская"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="price">Цена</label>
+            <input type="text" name="price" id="price" class="form-control" value="{{ old('price') }}" placeholder="Например: 100">
+        </div>
+        <div class="form-group">
+            <label for="image">Изображение</label>
+            <input type="file" name="image" id="image" class="form-control-file">
+        </div>
+        <div class="form-group">
+            <label for="availability">Отображать:
+                @if (old('availability') == 1)
+                    <input type="checkbox" name="availability" id="availability" value="1" checked><br>
+                @else
+                    <input type="checkbox" name="availability" id="availability" value="1"><br>
+                @endif
+            </label>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-secondary">Добавить товар</button>
+        </div>
     </form>
 @endsection
 
