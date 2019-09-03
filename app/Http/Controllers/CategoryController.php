@@ -44,12 +44,19 @@ class CategoryController extends Controller
     {
         $this->validate($request, [
             'title' => 'required|max:50',
-//           'description' => 'required',
+//            'description' => 'required',
+//            'description' => 'required|max:1000',
+            'seo_words' => 'required',
+//            'seo_words' => 'required|max:100',
+            'seo_description' => 'required',
+//            'seo_description' => 'required|max:150',
             'availability' => 'boolean'
         ]);
 
         $category = new Category();
         $category->title = $request->title;
+        $category->seo_words = $request->seo_words;
+        $category->seo_description = $request->seo_description;
         $category->availability = $request->availability;
         $category->save();
 
@@ -89,12 +96,19 @@ class CategoryController extends Controller
     {
         $this->validate($request, [
             'title' => 'required|max:50',
-//           'description' => 'required',
+//            'description' => 'required',
+//            'description' => 'required|max:1000',
+            'seo_words' => 'required',
+//            'seo_words' => 'required|max:100',
+            'seo_description' => 'required',
+//            'seo_description' => 'required|max:150',
             'availability' => 'boolean'
         ]);
 
         $category->title = $request->title;
-        $category->availability = $request->availability;
+        $category->seo_words = $request->seo_words;
+        $category->seo_description = $request->seo_description;
+        $category->availability = $request->availability ? $request->availability : 0;
         $category->save();
 
         return redirect()->route('categories.index');

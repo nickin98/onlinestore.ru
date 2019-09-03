@@ -214,5 +214,7 @@ return [
         'price'                 => 'Цена',
         'image'                 => 'Изображение',
         'availability'          => 'Доступность',
+        'seo_words'             => 'Ключевые слова',
+        'seo_description'       => 'SEO описание'
     ],
 ];
