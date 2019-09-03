@@ -128,12 +128,18 @@ a.accept-product:hover {
 
 /* End Button */
 
+/* Start Cart */
+
+/* End Cart */
+
+
 /* Start Footer */
 
 footer {
 	margin-top: 10px; /* Отступ сверху */
 	padding-top: 16px; /* Внутрений отступ */
-	height: 60px; /* Высота футера */
+	padding-bottom: 16px;
+	height: auto; /* Высота футера */
 	background-color: #a55f41; /* Цвет подвала */
 }
 

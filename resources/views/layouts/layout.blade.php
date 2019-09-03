@@ -26,6 +26,7 @@
     @include('layouts.nav')
     @include('layouts.carousel')
     @yield('content')
+    @include('layouts.cart')
     @include('layouts.footer')
 </body>
 </html>
