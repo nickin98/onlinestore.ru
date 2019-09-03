@@ -2,12 +2,8 @@
 
 @section('content')
     <div class="wrapper">
-        <h1>Продукт</h1>
+        <h1>Продукт {{ $product->title }}</h1>
         <table>
-            <tr>
-                <th>Название</th>
-                <td>{{ $product->title }}</td>
-            </tr>
             <tr>
                 <th>Описание</th>
                 <td>{{ $product->description }}</td>

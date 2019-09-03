@@ -12,27 +12,43 @@
     <form action="{{ route('products.update', $product->id) }}" method="POST" enctype="multipart/form-data">
         {{ csrf_field() }}
         {{ method_field('PUT') }}
-        <label for="title">Название</label><br>
-        <input type="text" name="title" id="title" value="{{ $product->title }}"><br>
-        <label for="description">Описание</label><br>
-        <textarea name="description" id="description" cols="30" rows="10">{{ $product->description }}</textarea><br>
-        <label for="price">Цена</label><br>
-        <input type="text" name="price" id="price" value="{{ $product->price }}"><br>
-        <label for="image">Картинка</label><br>
-        <img src="{{ $image }}" alt=""><br>
-        <input type="file" name="image" id="image"><br>
-        <label for="availability">Доступность</label><br>
-        <input type="checkbox" name="availability" id="availability" @if ($product->availability == 1) checked @endif value="1"><br>
-        <label for="category" >Категория</label><br>
-        <select name="category" id="category"><br>
-            @foreach($categories as $category)
-                @if ($category->id == $product->category_id)
-                    <option selected>{{ $category->title }}</option>
-                @else
-                    <option>{{ $category->title }}</option>
-                @endif
-            @endforeach
-        </select><br>
-        <input type="submit">
+        <h2>Редактирование товара</h2>
+        <div class="form-group">
+            <label for="title">Наименование товара</label>
+            <input type="text" name="title" class="form-control" id="title" value="{{ $product->title }}" placeholder="Например: Шаурма по маракански, Шаурма по Армянски">
+        </div>
+        <div class="form-group">
+            <label for="category" >Категория товара</label><
+            <select class="custom-select my-1 mr-sm-2" name="category" id="category">
+                @foreach($categories as $category)
+                    @if ($category->id == $product->category_id)
+                        <option selected>{{ $category->title }}</option>
+                    @else
+                        <option>{{ $category->title }}</option>
+                    @endif
+                @endforeach
+            </select><br>
+        </div>
+        <div class="form-group">
+            <label for="description">Описание</label>
+            <textarea class="form-control" rows="4" name="description" id="description" cols="30" rows="10" value="{{ old('description') }}" placeholder="Например: Сочная, острая и армянская">{{ $product->description }}</textarea>
+        </div>
+        <div class="form-group">
+            <label for="price">Цена</label>
+            <input type="text" name="price" id="price" class="form-control" value="{{ $product->price }}" placeholder="Например: 100">
+        </div>
+        <div class="form-group">
+            <label for="image">Изображение</label>
+            <img src="{{ $image }}" alt=""><br>
+            <input type="file" name="image" id="image" class="form-control-file">
+        </div>
+        <div class="form-group">
+            <label for="availability">Отображать:
+                <input type="checkbox" name="availability" id="availability" @if ($product->availability == 1) checked @endif value="1"><br>
+            </label>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-secondary">Изменить товар</button>
+        </div>
     </form>
 @endsection
