@@ -31,6 +31,9 @@ Route::post('/send', 'OrderController@register')->name('send');
 
 Route::post('/change', 'OrderController@changeStatus')->name('changeStatus');
 
+Route::post('/login', function () {
+    return 'hello';
+});
 
 Auth::routes();
 
