@@ -4,10 +4,23 @@ for (var i = 1; i < orders.length; i++) {
     var id = orders[i].querySelector('td').innerHTML;
     var select = orders[i].querySelector('select');
     var status = select.value;
-    select.addEventListener('change', changeStatus.bind(undefined, id, status));
+    select.addEventListener('change', changeStatusFactory.call(select, id));
 }
 
-async function changeStatus(id, status) {
+function changeStatusFactory(id) {
+    return (function () {
+        return changeStatus.call(this, id);
+    }).bind(this);
+}
+
+// (function (id) {
+//     return function wrapperChangeStatus() {
+//         changeStatus.bind(this)(id);
+//     }
+// })(id)
+
+
+async function changeStatus(id) {
     // var formData = new FormData();
     // formData.append('id', id);
     // formData.append('status', status);
@@ -21,6 +34,11 @@ async function changeStatus(id, status) {
     //
     // let text = await response.text();
     // alert(text);
+    // if (!confirm('Вы уверены, что хотите изменить статус заказа? При изменени статуса заказа на "Доставлен", он не будет показываться в списке')) {
+    //     return;
+    // }
+    var status = this.value;
+
     $.ajax({
         type: "POST",
         url: '/change',
