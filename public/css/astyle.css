@@ -17,6 +17,11 @@ body {
     height: 20px;
 }
 
+#delButton {
+    border: 0;
+    background: url('/images/admin/delete_icon.png') center no-repeat;
+}
+
 .content-admin {
     background-color: #FFFFFF;
     padding: 5px 10px 5px 10px;
