@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Product extends Model
 {
@@ -24,12 +25,29 @@ class Product extends Model
         $path = $request->file('image')->store('public/images');
         $full_path = storage_path('app') . '/' . $path;
         $image = \Image::make($full_path);
-        $image->fit(640, 640, function ($img) {
+//        $image->fit(400, 400, function ($img) {
+////            $img->aspectRatio();
+//            $img->upsize();
+//        });
+
+        $image->resize(400, 400, function ($img) {
 //            $img->aspectRatio();
             $img->upsize();
         });
+
         $image->save($full_path);
 
         return $path;
+    }
+
+    public function getImagePath() {
+        $exist = Storage::disk('public')->exists('images/' . $this->image);
+        if ($exist) {
+            $image = asset('storage/images/' . $this->image);
+        } else {
+            $image = asset('storage/images/empty.png');
+        }
+
+        return $image;
     }
 }

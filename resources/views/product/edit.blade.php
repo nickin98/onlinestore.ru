@@ -19,7 +19,9 @@
         <label for="price">Цена</label><br>
         <input type="text" name="price" id="price" value="{{ $product->price }}"><br>
         <label for="image">Картинка</label><br>
-        <img src="{{ $image }}" alt=""><br>
+{{--        <img src="{{ $image }}" onerror="this.src='/storage/images/empty.png'" alt="{{ $product->title }}">--}}
+        <img src="{{ $image }}" alt="{{ $product->title }}">
+        <br>
         <input type="file" name="image" id="image"><br>
         <label for="availability">Доступность</label><br>
         <input type="checkbox" name="availability" id="availability" @if ($product->availability == 1) checked @endif value="1"><br>
