@@ -24,7 +24,8 @@ Route::get('/cart', function () {
 });
 
 Route::get('/order', function () {
-    return view('order');
+    $user = \Auth::user();
+    return view('order', ['user' => $user]);
 });
 
 Route::post('/send', 'OrderController@register')->name('send');
@@ -34,6 +35,9 @@ Route::post('/change', 'OrderController@changeStatus')->name('changeStatus');
 Route::post('/login', function () {
     return 'hello';
 });
+
+Route::get('profile', 'ProfileController@index')->name('profile');
+Route::post('profile', 'ProfileController@update')->name('profile.update');
 
 Auth::routes();
 

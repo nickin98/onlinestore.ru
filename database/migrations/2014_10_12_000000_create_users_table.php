@@ -21,8 +21,7 @@ class CreateUsersTable extends Migration
             $table->integer('role_id')->default(1)->unsigned();
             $table->foreign('role_id')->references('id')->on('roles');
             $table->string('full_name')->nullable();
-            $table->string('address')->nullable();
-            $table->string('date_of_birth')->nullable();
+            $table->date('date_of_birth')->nullable();
             $table->string('street')->nullable();
             $table->string('house')->nullable();
             $table->string('flat')->nullable();

@@ -12,20 +12,31 @@
         @endif
         <form action="{{ route('send') }}" method="POST">
             {{ csrf_field() }}
-            <label for="name" style="display: block">Имя</label>
-            <input type="text" id="name" name="name" style="display: block" value="{{ old('name') }}">
             @if (Auth::guest())
                 <label for="phone" style="display: block">Телефон</label>
                 <input type="text" id="phone" name="phone" value="{{ old('phone') }}" style="display: block">
                 <label for="email" style="display: block">Email</label>
                 <input type="text" id="email" name="email" style="display: block" value="{{ old('email') }}">
             @endif
-            <label for="street" style="display: block">Улица</label>
-            <input type="text" id="street" name="street" style="display: block" value="{{ old('street') }}">
-            <label for="house" style="display: block">Дом</label>
-            <input type="text" id="house" name="house" style="display: block" value="{{ old('house') }}">
-            <label for="flat" style="display: block">Квартира</label>
-            <input type="text" id="flat" name="flat" style="display: block" value="{{ old('flat') }}">
+            @if (isset($user))
+                <label for="name" style="display: block">Имя</label>
+                <input type="text" id="name" name="name" style="display: block" value="{{ $user->full_name }}">
+                <label for="street" style="display: block">Улица</label>
+                <input type="text" id="street" name="street" style="display: block" value="{{ $user->street }}">
+                <label for="house" style="display: block">Дом</label>
+                <input type="text" id="house" name="house" style="display: block" value="{{ $user->house }}">
+                <label for="flat" style="display: block">Квартира</label>
+                <input type="text" id="flat" name="flat" style="display: block" value="{{ $user->flat }}">
+            @else
+                <label for="name" style="display: block">Имя</label>
+                <input type="text" id="name" name="name" style="display: block" value="{{ old('name') }}">
+                <label for="street" style="display: block">Улица</label>
+                <input type="text" id="street" name="street" style="display: block" value="{{ old('street') }}">
+                <label for="house" style="display: block">Дом</label>
+                <input type="text" id="house" name="house" style="display: block" value="{{ old('house') }}">
+                <label for="flat" style="display: block">Квартира</label>
+                <input type="text" id="flat" name="flat" style="display: block" value="{{ old('flat') }}">
+            @endif
             <label for="payment" style="display: block">Форма оплаты</label>
             <input type="radio" id="payment1" name="payment" checked value="1">
             <label for="payment1">Наличными курьеру</label>
