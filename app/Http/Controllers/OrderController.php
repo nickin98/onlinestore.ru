@@ -161,9 +161,10 @@ class OrderController extends Controller
 
         $orderId = $request->id;
         $orderStatus = $request->status;
-        $order = Order::where('id', $orderId)->first();
+        $order = Order::where('id', '=', $orderId)->first();
         $order->status = $orderStatus;
         $order->save();
-        return 'success' . $orderId . $orderStatus . $order;
+
+        return 'Статус обновлен';
     }
 }

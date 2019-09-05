@@ -18,7 +18,7 @@
             <input type="text" name="title" class="form-control" id="title" value="{{ $product->title }}" placeholder="Например: Шаурма по маракански, Шаурма по Армянски">
         </div>
         <div class="form-group">
-            <label for="category" >Категория товара</label><
+            <label for="category" >Категория товара</label>
             <select class="custom-select my-1 mr-sm-2" name="category" id="category">
                 @foreach($categories as $category)
                     @if ($category->id == $product->category_id)

@@ -50,7 +50,7 @@ class ProductController extends Controller
             'title' => 'required|string|max:50',
             'description' => 'required',
             'price' => 'required|integer',
-            'image' => 'image|mimes:jpeg,jpg,png,gif,svg|required|max:2048',
+            'image' => 'image|mimes:jpeg,jpg,png,gif,svg|required|max:2048|dimensions:min_width=400,min_height=400,ratio=1/1',
             'availability' => 'boolean',
             'category' => 'required'
         ]);
@@ -81,7 +81,8 @@ class ProductController extends Controller
     public function show(Product $product)
     {
         $categoryTitle = Category::where('id', $product->category_id)->first()->title;
-        $image = asset('storage/images/' . $product->image);
+        $image = $product->getImagePath();
+
         return view('product.show',['product' => $product, 'image' => $image, 'categoryTitle' => $categoryTitle]);
     }
 
@@ -93,7 +94,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        $image = asset('storage/images/' . $product->image);
+        $image = $product->getImagePath();
         $categories = Category::all();
         return view('product.edit',['product' => $product, 'categories' => $categories, 'image' => $image]);
     }
@@ -111,7 +112,7 @@ class ProductController extends Controller
             'title' => 'required|max:50',
             'description' => 'required',
             'price' => 'required|integer',
-            'image' => 'image|mimes:jpeg,jpg,png,gif,svg|max:2048',
+            'image' => 'image|mimes:jpeg,jpg,png,gif,svg|max:2048|dimensions:min_width=400,min_height=400,ratio=1/1',
             'availability' => 'boolean',
             'category' => 'required'
         ]);

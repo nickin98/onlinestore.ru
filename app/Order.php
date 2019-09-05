@@ -20,6 +20,7 @@ class Order extends Model
         return $this->belongsToMany('App\Product');
     }
 
-    protected $fillable = ['id', 'status'];
+    protected $fillable = ['status'];
+
 
 }
