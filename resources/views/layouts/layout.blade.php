@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>DURUM</title>
+    <title>@yield('title')</title>
     <meta name="keywords" content="keywords">
     <meta name="description" content="description_site">
     <!-- Bootstrap -->
@@ -24,8 +24,9 @@
     <a href="/admin">Админка</a>
     <a href="/cart">Корзина</a>
     @include('layouts.nav')
-    @include('layouts.carousel')
-    @yield('content')
+    @section('content')
+        @include('layouts.carousel')
+    @show
     @include('layouts.cart')
     @include('layouts.footer')
 </body>

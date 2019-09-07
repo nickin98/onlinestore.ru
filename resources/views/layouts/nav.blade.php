@@ -21,10 +21,10 @@
             <ul class="navbar-nav">
                 @guest
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="modal" data-target="#ModalLogin" href="#">Войти</a>
+                        <a class="nav-link" href="{{ route('login') }}">Войти</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="modal" data-target="#ModalRegister" href="#">Регистрация</a>
+                        <a class="nav-link" href="{{ route('register') }}">Регистрация</a>
                     </li>
                 @else
                     <li>
@@ -39,8 +39,6 @@
                     </li>
                 @endguest
             </ul>
-            @include("auth.login")
-            @include("auth.register")
             <script>
                 $("#phone").mask("+7(999) 999-99-99");
             </script>
