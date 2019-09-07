@@ -220,6 +220,8 @@ return [
         'image'                 => 'Изображение',
         'availability'          => 'Доступность',
         'seo_words'             => 'Ключевые слова',
-        'seo_description'       => 'SEO описание'
+        'seo_description'       => 'SEO описание',
+        'date_of_birth'         => 'День рождения',
+        'full_name'             => 'ФИО',
     ],
 ];
