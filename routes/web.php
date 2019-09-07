@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Category;
 
 Route::get('/', 'MenuController@index')->name('index');
 
@@ -35,6 +36,22 @@ Route::post('/change', 'OrderController@changeStatus')->name('changeStatus');
 Route::post('/login', function () {
     return 'hello';
 });
+
+Route::get('categories/{slug}', function ($slug) {
+    $categories = Category::all();
+
+    $category = Category::where('slug', '=', $slug)->first();
+
+    if (is_null($category)) {
+        // use either one of the two lines below. I prefer the second now
+        // return Event::first('404');
+        App::abort(404);
+    }
+
+    $products = $category->products()->paginate(8);
+
+    return view('index', ['products' => $products, 'categories' => $categories, 'category' => $category]);
+})->name('categories');
 
 Route::get('profile', 'ProfileController@index')->name('profile');
 Route::post('profile', 'ProfileController@update')->name('profile.update');

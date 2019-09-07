@@ -18,7 +18,7 @@ class CreateCategoriesTable extends Migration
             $table->string('title')->unique();
             $table->integer('availability');
             $table->text('seo_words')->nullable();;
-            $table->text('seo_description')->nullable();;
+            $table->text('seo_description')->nullable();
             $table->timestamps();
         });
     }
