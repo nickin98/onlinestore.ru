@@ -6,9 +6,15 @@ html, body, div, span, br, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, a,
     border: 0;
 }
 
+html {
+	position: relative;
+	min-height: 100%;
+}
+
 body {
 	height: auto;
 	font-family: 'Livvic', sans-serif; /* Задан стиль текста по умолчанию всему сайту */
+	margin-bottom: 42vh;
 	 /* Задний фон */
 }
 
@@ -139,8 +145,11 @@ footer {
 	margin-top: 10px; /* Отступ сверху */
 	padding-top: 16px; /* Внутрений отступ */
 	padding-bottom: 16px;
-	height: auto; /* Высота футера */
 	background-color: #a55f41; /* Цвет подвала */
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 42vh; /*высота футера будет зависеть от высоты экрана*/
 }
 
 .social-bar img {
