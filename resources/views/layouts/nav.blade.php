@@ -7,9 +7,20 @@
         </button>
         <div class="collapse justify-content-between navbar-collapse" id="navbar1">
 
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Меню доставки</a>
+            <ul class="navbarIndex navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarMenu" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Меню доставки</a>
+                    <div class="dropdown-menu sub-menu" aria-labelledby="navbarMenu">
+{{--                        <a class="dropdown-item" href="#">Дурум (Армянская шаурма)</a>--}}
+{{--                        <a class="dropdown-item" href="#">Шашлык</a>--}}
+{{--                        <a class="dropdown-item" href="#">Коктейли</a>--}}
+{{--                        <a class="dropdown-item" href="#">Лимонады</a>--}}
+{{--                        <a class="dropdown-item" href="#">Гонкогская вафля</a>--}}
+{{--                        <a class="dropdown-item" href="#">Хот-Дог</a>--}}
+                        @foreach($categories as $category)
+                            <a class="dropdown-item" href="{{ route('categories', $category->slug) }}">{{ $category->title }}</a>
+                        @endforeach
+                    </div>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Акции</a>
@@ -19,16 +30,19 @@
                 </li>
             </ul>
             <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/cart">Корзина (0)</a>
+                    </li>
                 @guest
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="modal" data-target="#ModalLogin" href="#">Войти</a>
+                        <a class="nav-link" href="{{ route('login') }}">Войти</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="modal" data-target="#ModalRegister" href="#">Регистрация</a>
+                        <a class="nav-link" href="{{ route('register') }}">Регистрация</a>
                     </li>
                 @else
-                    <li>
-                        <a href="{{ route('logout') }}"
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('logout') }}"
                            onclick="event.preventDefault();
                            document.getElementById('logout-form').submit();">
                             Выход
@@ -39,8 +53,6 @@
                     </li>
                 @endguest
             </ul>
-            @include("auth.login")
-            @include("auth.register")
             <script>
                 $("#phone").mask("+7(999) 999-99-99");
             </script>

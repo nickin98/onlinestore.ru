@@ -10,8 +10,8 @@ class MenuController extends Controller
 {
     public function index()
     {
-        $category = Category::first();
-        $products = Product::paginate(8);
-        return view('index', ['products' => $products, 'category' => $category]);
+        $categories = Category::all();
+        $products = Product::paginate(12);
+        return view('index', ['products' => $products, 'categories' => $categories]);
     }
 }

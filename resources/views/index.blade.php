@@ -1,6 +1,8 @@
 @extends('layouts.layout')
 
+@section('title', 'DURUM - Главная страница')
 @section('content')
+    @parent
 	<div class="container content">
 		<div class="row">
 			@foreach($products as $product)

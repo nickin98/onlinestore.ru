@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Category;
 use App\Customer;
 use App\User;
 use App\Http\Controllers\Controller;
@@ -84,5 +85,11 @@ class RegisterController extends Controller
         }
 
         return $user;
+    }
+
+    public function showRegistrationForm()
+    {
+        $categories = Category::all();
+        return view('auth.register', ['categories' => $categories]);
     }
 }

@@ -6,18 +6,16 @@ html, body, div, span, br, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, a,
     border: 0;
 }
 
+html {
+	position: relative;
+	min-height: 100%;
+}
+
 body {
 	height: auto;
 	font-family: 'Livvic', sans-serif; /* Задан стиль текста по умолчанию всему сайту */
+	margin-bottom: 45vh;
 	 /* Задний фон */
-}
-
-.container {
-	width:1140px; /* Ширина сайта */
-}
-
-.modal-content {
-	background-color:#eef0e9;
 }
 
 /* Start Navigation */
@@ -60,11 +58,12 @@ nav a:hover {
 /* Start Content */
 
 .content {
-	margin-top: 10px; /* Отступ от карусели */
+	margin-top: 20px; /* Отступ от карусели */
 }
 
 .product {
 	border-bottom: 1px solid #eef0e9; /* Задание границы продукта */
+	padding-top: 15px;
 }
 
 .product:hover {
@@ -128,19 +127,16 @@ a.accept-product:hover {
 
 /* End Button */
 
-/* Start Cart */
-
-/* End Cart */
-
-
 /* Start Footer */
 
 footer {
-	margin-top: 10px; /* Отступ сверху */
 	padding-top: 16px; /* Внутрений отступ */
 	padding-bottom: 16px;
-	height: auto; /* Высота футера */
 	background-color: #a55f41; /* Цвет подвала */
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 45vh; /*высота футера будет зависеть от высоты экрана*/
 }
 
 .social-bar img {
@@ -158,8 +154,40 @@ footer {
 /* Start Paginator */
 
 .page-item.active .page-link {
+	background-color: #503434;
+	border-color: #000000;
+	color: #eef0e9;
+}
+
+.page-link {
+	margin-bottom: 25px; /* Отступ сверху */
 	background-color: #a55f41;
-	border-color: #a55f41;
+	border-color: #000000;
+	color: #eef0e9;
+}
+
+.page-link:hover {
+	background-color: #503434;
+	border-color: #000000;
+	color: #fceac6;
 }
 
 /* End Paginator */
+
+/* Start cart */
+
+#cart {
+	width: 400px;
+	height: 300px;
+}
+
+/* End cart */
+
+/* LogReg Start */
+
+
+.logreg {
+	margin-top: 60px;
+}
+
+/* LogReg End */

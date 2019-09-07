@@ -22,12 +22,10 @@
 </head>
 <body>
     <a href="/admin">Админка</a>
-    <a href="/cart">Корзина</a>
-    <a href="{{ route('categories', $category->slug) }}">Категория</a>
     @include('layouts.nav')
-    @include('layouts.carousel')
-    @yield('content')
-    @include('layouts.cart')
+    @section('content')
+        @include('layouts.carousel')
+    @show
     @include('layouts.footer')
 </body>
 </html>

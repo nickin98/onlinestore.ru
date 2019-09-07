@@ -21,12 +21,14 @@ Route::get('/admin', function () {
 Route::get('admin/new', 'OrderController@unfinishedOrders')->name('new');
 
 Route::get('/cart', function () {
-    return view('cart');
+    $categories = Category::all();
+    return view('cart', ['categories' => $categories]);
 });
 
 Route::get('/order', function () {
+    $categories = Category::all();
     $user = \Auth::user();
-    return view('order', ['user' => $user]);
+    return view('order', ['user' => $user,'categories' => $categories]);
 });
 
 Route::post('/send', 'OrderController@register')->name('send');
