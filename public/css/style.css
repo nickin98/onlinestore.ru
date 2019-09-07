@@ -18,10 +18,6 @@ body {
 	 /* Задний фон */
 }
 
-.container {
-	width:1140px; /* Ширина сайта */
-}
-
 .modal-content {
 	background-color:#eef0e9;
 }
@@ -66,7 +62,7 @@ nav a:hover {
 /* Start Content */
 
 .content {
-	margin-top: 10px; /* Отступ от карусели */
+	margin-top: 20px; /* Отступ от карусели */
 }
 
 .product {
@@ -133,11 +129,6 @@ a.accept-product:hover {
 }
 
 /* End Button */
-
-/* Start Cart */
-
-/* End Cart */
-
 
 /* Start Footer */
 
