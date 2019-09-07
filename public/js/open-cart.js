@@ -20,8 +20,7 @@ function getCartProducts() {
     var cart = openCart();
 
     if (cart == false) {
-        return '<h2 class="col text-center">Ваша Корзина пуста</h2><br>' +
-            '';
+        return '<h2 class="col text-center">Ваша Корзина пуста</h2><br>';
     }
     var productsHTML = '';
 

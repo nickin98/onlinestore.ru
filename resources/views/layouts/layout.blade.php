@@ -22,12 +22,10 @@
 </head>
 <body>
     <a href="/admin">Админка</a>
-    <a href="/cart">Корзина</a>
     @include('layouts.nav')
     @section('content')
         @include('layouts.carousel')
     @show
-    @include('layouts.cart')
     @include('layouts.footer')
 </body>
 </html>
