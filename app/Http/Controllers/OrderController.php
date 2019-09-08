@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Customer;
 use App\Order;
 use App\OrderProduct;
@@ -120,16 +121,25 @@ class OrderController extends Controller
             }
 
             $order->status = 1;
+
+            $products = json_decode($request->cart, true);
+
+            $totalPrice = 0;
+            foreach ($products as $productId => $product) {
+                $productPrice = Product::where('id', $productId)->first()->price;
+                $totalPrice += $productPrice * $product[3];
+            }
+
+            $order->total_price = $totalPrice;
+
             $order->save();
 
             $orderId = $order->id;
 
-            $products = json_decode($request->cart, true);
-
-            $productIds = $productIds = Product::all()->pluck('id')->toArray();
+            $allProductIds = Product::all()->pluck('id')->toArray();
 
             foreach($products as $productId => $product) {
-                if (!array_has($productIds, $productId)) {
+                if (!array_has($allProductIds, $productId)) {
                     throw new \Exception('Продукта с id=' . $productId. ' нет в базе данных');
                 }
                 $orderProduct = new OrderProduct();
@@ -139,13 +149,15 @@ class OrderController extends Controller
                 $orderProduct->save();
             }
 
+            $categories = Category::all();
+
             DB::commit();
         } catch(Exception $e) {
             DB::rollBack();
         }
 
 //        return redirect()->route('index');
-        return view('success');
+        return view('success', ['categories' => $categories]);
     }
 
     public function unfinishedOrders() {

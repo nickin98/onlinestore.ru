@@ -31,7 +31,7 @@
             </ul>
             <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="/cart">Корзина (0)</a>
+                        <a class="nav-link" href="/cart">Корзина (<span id="basket-price">0</span> ₽)</a>
                     </li>
                 @guest
                     <li class="nav-item">
