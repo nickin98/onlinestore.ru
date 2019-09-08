@@ -6,5 +6,6 @@
     </div>
     <script>
         localStorage.removeItem('cart');
+        localStorage.removeItem('price');
     </script>
 @endsection

@@ -11,12 +11,15 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarMenu" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Меню доставки</a>
                     <div class="dropdown-menu sub-menu" aria-labelledby="navbarMenu">
-                        <a class="dropdown-item" href="#">Дурум (Армянская шаурма)</a>
-                        <a class="dropdown-item" href="#">Шашлык</a>
-                        <a class="dropdown-item" href="#">Коктейли</a>
-                        <a class="dropdown-item" href="#">Лимонады</a>
-                        <a class="dropdown-item" href="#">Гонкогская вафля</a>
-                        <a class="dropdown-item" href="#">Хот-Дог</a>
+{{--                        <a class="dropdown-item" href="#">Дурум (Армянская шаурма)</a>--}}
+{{--                        <a class="dropdown-item" href="#">Шашлык</a>--}}
+{{--                        <a class="dropdown-item" href="#">Коктейли</a>--}}
+{{--                        <a class="dropdown-item" href="#">Лимонады</a>--}}
+{{--                        <a class="dropdown-item" href="#">Гонкогская вафля</a>--}}
+{{--                        <a class="dropdown-item" href="#">Хот-Дог</a>--}}
+                        @foreach($categories as $category)
+                            <a class="dropdown-item" href="{{ route('categories', $category->slug) }}">{{ $category->title }}</a>
+                        @endforeach
                     </div>
                 </li>
                 <li class="nav-item">
@@ -28,7 +31,7 @@
             </ul>
             <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="/cart">Корзина (0)</a>
+                        <a class="nav-link" href="/cart">Корзина (<span id="basket-price">0</span> ₽)</a>
                     </li>
                 @guest
                     <li class="nav-item">

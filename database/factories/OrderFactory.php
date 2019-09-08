@@ -23,6 +23,7 @@ $factory->define(App\Order::class, function (Faker $faker) {
         'near_time_delivery' => rand(0,1),
         'exact_delivery_time' => $faker->dateTime,
         'comment' => $faker->sentence(15),
-        'status' => rand(1,3)
+        'status' => rand(1,3),
+        'total_price' => rand(20, 500),
     ];
 });

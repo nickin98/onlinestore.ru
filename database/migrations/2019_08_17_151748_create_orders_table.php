@@ -24,6 +24,7 @@ class CreateOrdersTable extends Migration
             $table->dateTime('exact_delivery_time')->nullable();
             $table->text('comment')->nullable();
             $table->integer('status');
+            $table->integer('total_price');
             $table->integer('customer_id')->unsigned();
             $table->foreign('customer_id')->references('id')->on('customers');
             $table->timestamps();
