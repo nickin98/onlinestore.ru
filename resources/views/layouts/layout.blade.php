@@ -23,9 +23,11 @@
 <body>
     <a href="/admin">Админка</a>
     @include('layouts.nav')
-    @section('content')
-        @include('layouts.carousel')
-    @show
+    <div class="main-section">
+        @section('content')
+            @include('layouts.carousel')
+        @show
+    </div>
     @include('layouts.footer')
 </body>
 </html>

@@ -7,19 +7,20 @@ html, body, div, span, br, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, a,
 }
 
 html {
-	position: relative;
-	min-height: 100%;
+	height: 100%;
 }
 
 body {
-	height: auto;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
 	font-family: 'Livvic', sans-serif; /* Задан стиль текста по умолчанию всему сайту */
-	margin-bottom: 45vh;
 	 /* Задний фон */
 }
 
 /* Start Navigation */
 nav {
+	flex: 0 0 auto;
 	background-color: #a55f41; /* Цвет меню */
 }
 
@@ -56,6 +57,10 @@ nav a:hover {
 /* End Carousel */
 
 /* Start Content */
+
+.main-section {
+	flex: 1 0 auto;
+}
 
 .content {
 	margin-top: 20px; /* Отступ от карусели */
@@ -130,13 +135,10 @@ a.accept-product:hover {
 /* Start Footer */
 
 footer {
+	flex: 0 0 auto;
 	padding-top: 16px; /* Внутрений отступ */
 	padding-bottom: 16px;
 	background-color: #a55f41; /* Цвет подвала */
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	height: 45vh; /*высота футера будет зависеть от высоты экрана*/
 }
 
 .social-bar img {
