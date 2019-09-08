@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-
+@section('title', 'Твоя корзина покупок DURUM')
 @section('content')
     <script src="{{ asset('js/open-cart.js') }}" defer></script>
     <div class="container content">
