@@ -21,7 +21,12 @@
     <script src="{{ asset('js/datepicker-ru.js') }}"></script>
 </head>
 <body>
-    <a href="/admin">Админка</a>
+    @php
+        $user = Auth::user();
+    @endphp
+    @if($user && $user->role_id == 3)
+        <a href="/admin">Админка</a>
+    @endif
     @include('layouts.nav')
     @section('content')
         @include('layouts.carousel')

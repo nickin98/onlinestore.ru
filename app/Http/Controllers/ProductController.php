@@ -52,6 +52,7 @@ class ProductController extends Controller
             'price' => 'required|integer',
             'image' => 'image|mimes:jpeg,jpg,png,gif,svg|required|max:2048|dimensions:min_width=400,min_height=400,ratio=1/1',
             'availability' => 'boolean',
+            'main_active' => 'boolean',
             'category' => 'required'
         ]);
 
@@ -59,7 +60,8 @@ class ProductController extends Controller
         $product->title = $request->title;
         $product->description = $request->description;
         $product->price = $request->price;
-        $product->availability = $request->availability;
+        $product->availability = $request->availability ? $request->availability : 0;
+        $product->main_active = $request->main_active ? $request->main_active : 0;
         $product->category_id = Category::getCategoryIdByTitle($request->category);
 
         $path = $product->saveImage($request);
@@ -114,6 +116,7 @@ class ProductController extends Controller
             'price' => 'required|integer',
             'image' => 'image|mimes:jpeg,jpg,png,gif,svg|max:2048|dimensions:min_width=400,min_height=400,ratio=1/1',
             'availability' => 'boolean',
+            'main_active' => 'boolean',
             'category' => 'required'
         ]);
 
@@ -121,6 +124,7 @@ class ProductController extends Controller
         $product->description = $request->description;
         $product->price = $request->price;
         $product->availability = $request->availability ? $request->availability : 0;
+        $product->main_active = $request->main_active ? $request->main_active : 0;
         $product->category_id = Category::getCategoryIdByTitle($request->category);
 
         if (!empty($request->image) and isset($request->image)) {

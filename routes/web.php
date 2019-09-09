@@ -16,7 +16,7 @@ Route::get('/', 'MenuController@index')->name('index');
 
 Route::get('/admin', function () {
     return view('admin');
-});
+})->middleware('auth')->middleware('admin');
 
 Route::get('admin/new', 'OrderController@unfinishedOrders')->name('new');
 
