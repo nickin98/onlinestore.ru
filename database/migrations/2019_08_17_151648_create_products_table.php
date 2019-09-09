@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->integer('price');
             $table->string('image');
             $table->integer('availability');
+            $table->boolean('main_active');
             $table->text('seo_words')->nullable();
             $table->text('seo_description')->nullable();
             $table->integer('category_id')->unsigned();

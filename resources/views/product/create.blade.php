@@ -46,6 +46,15 @@
             </label>
         </div>
         <div class="form-group">
+            <label for="main_active">Отображать на главной странице:
+                @if (old('main_active') == 1)
+                    <input type="checkbox" name="main_active" id="main_active" value="1" checked><br>
+                @else
+                    <input type="checkbox" name="main_active" id="main_active" value="1"><br>
+                @endif
+            </label>
+        </div>
+        <div class="form-group">
             <button type="submit" class="btn btn-secondary">Добавить товар</button>
         </div>
     </form>

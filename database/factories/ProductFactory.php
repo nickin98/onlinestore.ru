@@ -19,6 +19,7 @@ $factory->define(App\Product::class, function (Faker $faker) {
         'description' => $faker->sentence(4),
         'price' => $faker->randomNumber(2), // secret
         'image' => str_random(10),
-        'availability' => rand(0,1)
+        'availability' => rand(0,1),
+        'main_active' => rand(0,1),
     ];
 });
