@@ -48,6 +48,11 @@
             </label>
         </div>
         <div class="form-group">
+            <label for="main_active">Отображать на главной странице:
+                <input type="checkbox" name="main_active" id="main_active" @if ($product->main_active == 1) checked @endif value="1"><br>
+            </label>
+        </div>
+        <div class="form-group">
             <button type="submit" class="btn btn-secondary">Изменить товар</button>
         </div>
     </form>

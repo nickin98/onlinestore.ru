@@ -25,6 +25,14 @@
                 @endif
             </tr>
             <tr>
+                <th>Отображать на главной странице</th>
+                @if ($product->main_active)
+                    <td>Отображать</td>
+                @else
+                    <td>Не отображать</td>
+                @endif
+            </tr>
+            <tr>
                 <th>Категория</th>
                 <td>{{ $categoryTitle }}</td>
             </tr>

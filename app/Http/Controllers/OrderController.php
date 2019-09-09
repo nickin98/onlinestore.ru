@@ -26,8 +26,8 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = Order::paginate(10);;
-        return view('order.index', ['categories' => $orders]);
+        $orders = Order::paginate(10);
+        return view('order.index', ['orders' => $orders]);
     }
 
     /**
@@ -38,7 +38,9 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        return view('order.show', ['category' => $order]);
+        $products = $order->products()->get();
+        $order_product = new OrderProduct;
+        return view('order.show', ['order' => $order, 'products' => $products, 'order_product' => $order_product]);
     }
 
     /**

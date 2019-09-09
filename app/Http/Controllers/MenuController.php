@@ -11,7 +11,7 @@ class MenuController extends Controller
     public function index()
     {
         $categories = Category::all();
-        $products = Product::paginate(12);
+        $products = Product::where('main_active', '=', 1)->paginate(12);
         return view('index', ['products' => $products, 'categories' => $categories]);
     }
 }
