@@ -3,13 +3,7 @@
 @section('content')
 
         <div class="adm-category">
-            <div class="name-category">
-                <div class="row">
-                    <h2 class="col-11">Заказы</h2>
-                    <a src="#"><img src="/images/admin/add_icon.png"></a>
-                </div>
-            </div>
-
+            <h2>Заказы</h2>
         </div>
         <div class="table-category">
             <table class="table table-hover table-Light">

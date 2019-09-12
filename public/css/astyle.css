@@ -36,7 +36,7 @@ body {
 .adm-category {
     background-color: white;
     color: black;
-    padding: 10px 10px 10px 25px;
+    padding: 10px 10px 10px 0;
 }
 
 .name-category img {
