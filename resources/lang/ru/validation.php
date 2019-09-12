@@ -223,5 +223,6 @@ return [
         'seo_description'       => 'SEO описание',
         'date_of_birth'         => 'День рождения',
         'full_name'             => 'ФИО',
+        'short_description'     => 'Краткое описание',
     ],
 ];

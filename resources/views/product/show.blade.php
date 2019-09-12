@@ -5,6 +5,10 @@
         <h1>Продукт {{ $product->title }}</h1>
         <table>
             <tr>
+                <th>Краткое описание</th>
+                <td>{{ $product->short_description }}</td>
+            </tr>
+            <tr>
                 <th>Описание</th>
                 <td>{{ $product->description }}</td>
             </tr>

@@ -13,7 +13,7 @@
 					</div>
 					<a class="name-product" href="#">{{ $product->title }}</a>
 					<div class="preview-product-description">
-						Сочный, мощный.
+						{{ $product->short_description }}
 					</div>
 					<div class="product-controls">
 						<div class="row">

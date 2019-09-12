@@ -39,7 +39,10 @@
                         @endphp
                         @foreach($products as $product)
                             @php
-                                $product_amount = $order_product::where('product_id', $product->id)->first()->amount;
+                                $product_amount = $order_product::where([
+                                ['order_id', $order->id],
+                                ['product_id', $product->id]
+                                ])->first()->amount;
                                 $product_price = $product->price;
                                 $total_price += $product_price * $product_amount;
                             @endphp

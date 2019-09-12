@@ -16,6 +16,7 @@ use Faker\Generator as Faker;
 $factory->define(App\Product::class, function (Faker $faker) {
     return [
         'title' => $faker->sentence(3),
+        'short_description' => $faker->sentence(1),
         'description' => $faker->sentence(4),
         'price' => $faker->randomNumber(2), // secret
         'image' => str_random(10),

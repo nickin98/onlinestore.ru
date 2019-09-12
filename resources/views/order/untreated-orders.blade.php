@@ -4,7 +4,7 @@
     <div class="adm-category">
         <div class="name-category">
             <div class="row">
-                <h2 class="col-11">Незавершенные/Необработанные заказы</h2>
+                <h2 class="col-11">Незавершенные/Новые заказы</h2>
             </div>
         </div>
     </div>
@@ -20,6 +20,7 @@
             <th>Время</th>
             <th>Комментарий</th>
             <th>Статус</th>
+            <th>Действия</th>
         </tr>
         </thead>
         <tbody>
@@ -59,6 +60,9 @@
                             <option value="2" id="option2" {{ $order->status == 2 ? 'selected="selected"' : '' }}>Доставляется</option>
                             <option value="3" id="option3" {{ $order->status == 3 ? 'selected="selected"' : '' }}>Доставлен</option>
                         </select>
+                    </td>
+                    <td class="icon-table">
+                        <a href="{{ route('orders.show', $order->id) }}"><img src="/images/admin/see_icon.png"></a>
                     </td>
                 </tr>
             @endforeach

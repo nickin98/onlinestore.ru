@@ -47,7 +47,8 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'title' => 'required|string|max:50',
+            'title' => 'required|string|max:31',
+            'short_description' => 'required|string|max:22',
             'description' => 'required',
             'price' => 'required|integer',
             'image' => 'image|mimes:jpeg,jpg,png,gif,svg|required|max:2048|dimensions:min_width=400,min_height=400,ratio=1/1',
@@ -58,6 +59,7 @@ class ProductController extends Controller
 
         $product = new Product();
         $product->title = $request->title;
+        $product->short_description = $request->short_description;
         $product->description = $request->description;
         $product->price = $request->price;
         $product->availability = $request->availability ? $request->availability : 0;
@@ -111,7 +113,8 @@ class ProductController extends Controller
     public function update(Request $request, Product $product)
     {
         $this->validate($request, [
-            'title' => 'required|max:50',
+            'title' => 'required|string|max:31',
+            'short_description' => 'required|string|max:22',
             'description' => 'required',
             'price' => 'required|integer',
             'image' => 'image|mimes:jpeg,jpg,png,gif,svg|max:2048|dimensions:min_width=400,min_height=400,ratio=1/1',
@@ -121,6 +124,7 @@ class ProductController extends Controller
         ]);
 
         $product->title = $request->title;
+        $product->short_description = $request->short_description;
         $product->description = $request->description;
         $product->price = $request->price;
         $product->availability = $request->availability ? $request->availability : 0;
