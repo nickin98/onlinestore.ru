@@ -9,7 +9,7 @@
 				<div class="product col-lg-3 col-md-4">
 					<div class="preview-product-image">
 {{--						<a href="#"><img class="img-fluid " src="images/durum2.png"></a>--}}
-						<a href="#"><img class="img-fluid mx-auto d-block" src="{{ $product->getImagePath() }}"></a>
+						<a href="#"><img class="img-fluid rounded mx-auto d-block" src="{{ $product->getImagePath() }}"></a>
 					</div>
 					<a class="name-product" href="#">{{ $product->title }}</a>
 					<div class="preview-product-description">

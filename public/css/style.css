@@ -88,6 +88,7 @@ nav a:hover {
 
 .product a:hover {
 	color: #503434; /* Цвет ссылки при наведении */
+	cursor: pointer;
 }
 
 .product-controls {
