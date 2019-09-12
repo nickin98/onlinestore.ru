@@ -35,14 +35,11 @@ function getCartProducts() {
         var productDescription = cart[id][2];
         var productCount = cart[id][3];
         var totalPrice = productMoney * productCount;
-        productsHTML += '<div class="product col-lg-3 col-md-4">';
+        productsHTML += '<div class="product col-lg-2">';
         productsHTML +=     '<div class="preview-product-image">';
         productsHTML +=         '<a href="#"><img class="img-fluid " src="images/durum2.png"></a>';
         productsHTML +=     '</div>';
         productsHTML +=     '<a class="name-product" href="#">' + productName + '</a>';
-        productsHTML +=     '<div class="preview-product-description">';
-        productsHTML +=         'Сочный, мощный.';
-        productsHTML +=     '</div>';
         productsHTML +=     '<div class="product-controls">';
         productsHTML +=         '<div class="row">';
         productsHTML +=             '<div class="product-price">';

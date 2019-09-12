@@ -147,8 +147,21 @@ footer {
 }
 
 .social-bar a {
-	text-decoration: none; /* Убирание нижнего подчёркивания у ссылок */
+	text-decoration: none;
 	color: #503434; /* Цвет ссылок */
+}
+
+.social-bar a:hover {
+	color: black;
+}
+
+.footer-copyright a {
+	text-decoration: none;
+	color: #503434; /* Цвет ссылок */
+}
+
+.footer-copyright a:hover {
+	color: black;
 }
 
 /* End Footer */
@@ -181,6 +194,16 @@ footer {
 #cart {
 	width: 400px;
 	height: 300px;
+}
+
+.img-cart {
+	width: 100px;
+	height: 50px;
+	margin-bottom: 60px;
+}
+
+.cart-product {
+	height: auto;
 }
 
 /* End cart */

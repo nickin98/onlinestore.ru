@@ -39,6 +39,16 @@ Route::post('/login', function () {
     return 'hello';
 });
 
+Route::get('/aboutcompany', function () {
+    $categories = Category::all();
+    return view('mycompany', ['categories' => $categories]);
+});
+
+Route::get('/stock', function () {
+    $categories = Category::all();
+    return view('stock', ['categories' => $categories]);
+});
+
 Route::get('categories/{slug}', function ($slug) {
     $categories = Category::all();
 
