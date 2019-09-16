@@ -164,7 +164,7 @@ class OrderController extends Controller
 
     public function unfinishedOrders() {
         $orders = Order::where('status', '=', 1)->orWhere('status', '=', 2)->get();
-        return view('untreated-orders', ['orders' => $orders]);
+        return view('order.untreated-orders', ['orders' => $orders]);
     }
 
     public function changeStatus(Request $request) {

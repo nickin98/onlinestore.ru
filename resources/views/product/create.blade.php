@@ -25,6 +25,10 @@
             </select>
         </div>
         <div class="form-group">
+            <label for="short_description">Описание</label>
+            <textarea class="form-control" rows="4" name="short_description" id="short_description" cols="30" rows="10" value="{{ old('short_description') }}" placeholder="Например: Сочная, острая и армянская"></textarea>
+        </div>
+        <div class="form-group">
             <label for="description">Описание</label>
             <textarea class="form-control" rows="4" name="description" id="description" cols="30" rows="10" value="{{ old('description') }}" placeholder="Например: Сочная, острая и армянская"></textarea>
         </div>
