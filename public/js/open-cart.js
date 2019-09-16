@@ -35,7 +35,7 @@ function getCartProducts() {
         var productDescription = cart[id][2];
         var productCount = cart[id][3];
         var totalPrice = productMoney * productCount;
-        productsHTML += '<div class="product col-lg-2">';
+        productsHTML += '<div class="product col-lg-3">';
         productsHTML +=     '<div class="preview-product-image">';
         productsHTML +=         '<a href="#"><img class="img-fluid " src="images/durum2.png"></a>';
         productsHTML +=     '</div>';
