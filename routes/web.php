@@ -39,10 +39,10 @@ Route::post('/login', function () {
     return 'hello';
 });
 
-Route::get('/aboutcompany', function () {
+Route::get('aboutcompany', function () {
     $categories = Category::all();
     return view('mycompany', ['categories' => $categories]);
-});
+})->name('aboutcompany');
 
 Route::get('/stock', function () {
     $categories = Category::all();

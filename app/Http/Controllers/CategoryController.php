@@ -57,7 +57,7 @@ class CategoryController extends Controller
         $category->title = $request->title;
         $category->seo_words = $request->seo_words;
         $category->seo_description = $request->seo_description;
-        $category->availability = $request->availability;
+        $category->availability = $request->availability ? $request->availability : 0;
         $category->save();
 
         return redirect()->route('categories.index');

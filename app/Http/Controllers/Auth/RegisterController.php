@@ -29,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -79,10 +79,14 @@ class RegisterController extends Controller
             ['email', '=', $email]
         ])->first();
 
-        if ($customer != null) {
-            $customer->user_id = $user->id;
-            $customer->save();
+        if ($customer == null) {
+            $customer = new Customer();
+            $customer->phone = $phone;
+            $customer->email = $email;
         }
+
+        $customer->user_id = $user->id;
+        $customer->save();
 
         return $user;
     }

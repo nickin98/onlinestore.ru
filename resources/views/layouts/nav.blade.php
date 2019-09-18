@@ -20,7 +20,7 @@
                     <a class="nav-link" href="#">Акции</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">О компании</a>
+                    <a class="nav-link" href="{{ route('aboutcompany') }}">О компании</a>
                 </li>
             </ul>
             <ul class="navbar-nav">
@@ -47,9 +47,6 @@
                     </li>
                 @endguest
             </ul>
-            <script>
-                $("#phone").mask("+7(999) 999-99-99");
-            </script>
         </div>
     </div>
 </nav>

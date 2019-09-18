@@ -83,4 +83,8 @@
             </div>
         </form>
     </div>
+    <script src="{{ asset('js/jquery.maskedinput.js') }}"></script>
+    <script>
+        $("#phone").mask("+7(999) 999-99-99");
+    </script>
 @endsection
