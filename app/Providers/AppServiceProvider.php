@@ -21,11 +21,10 @@ class AppServiceProvider extends ServiceProvider
         Validator::extend('exist_product', function ($attribute, $value, $parameters, $validator) {
             try {
                 $productIds = Product::all()->pluck('id')->toArray();
-
                 $products = json_decode($value, true);
-
                 foreach($products as $productId => $product) {
-                    if (!array_has($productIds, $productId)) {
+                    if (!in_array($productId, $productIds)) {
+                        dd($productId);
                         return false;
                     }
                 }

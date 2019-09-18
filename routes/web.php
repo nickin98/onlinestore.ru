@@ -47,7 +47,7 @@ Route::get('aboutcompany', function () {
 Route::get('/stock', function () {
     $categories = Category::all();
     return view('stock', ['categories' => $categories]);
-});
+})->name('stock');
 
 Route::get('categories/{slug}', function ($slug) {
     $categories = Category::all();

@@ -34,10 +34,11 @@ function getCartProducts() {
         var productMoney = parseInt(cart[id][1]);
         var productDescription = cart[id][2];
         var productCount = cart[id][3];
+        var productImagePath = cart[id][4];
         var totalPrice = productMoney * productCount;
         productsHTML += '<div class="product col-lg-3">';
         productsHTML +=     '<div class="preview-product-image">';
-        productsHTML +=         '<a href="#"><img class="img-fluid " src="images/durum2.png"></a>';
+        productsHTML +=         '<a href="#"><img class="img-fluid " src="' + productImagePath + '"></a>';
         productsHTML +=     '</div>';
         productsHTML +=     '<a class="name-product" href="#">' + productName + '</a>';
         productsHTML +=     '<div class="product-controls">';
