@@ -18,7 +18,7 @@
 					<div class="product-controls">
 						<div class="row">
 							<div class="product-price">
-								от <span class="product-money">{{ $product->price }} ₽</span>
+								от <span class="product-money">{{ $product->price }} ₽/</span><span id="numberPieces">0</span> шт
 							</div>
 							<div class="product-to-cart ml-auto">
 								<a class="accept-product" data-id="{{ $product->id }}">Выбрать</a>
