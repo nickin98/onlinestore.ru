@@ -50,7 +50,7 @@ nav a:hover {
 
 /* Start Carousel */
 
-.d-block {
+.carousel-inner .d-block {
 	height: 300px; /* Размер изображения карусели по высоте */
 }
 

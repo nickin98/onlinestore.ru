@@ -6,8 +6,8 @@
             </div>
             <div class="social-bar col-lg-8 text-right">
                 Социальные сети:
-                <a href="#"><img src="/images/inst_logo.png"> Instagram</a>
-                <a href="#"><img src="/images/vk_logo.png"> Vkontakte</a>
+                <a href="https://www.instagram.com/durum_vp/" ><img src="/images/inst_logo.png"> Instagram</a>
+                <a href="https://vk.com/durum_vp"><img src="/images/vk_logo.png"> Vkontakte</a>
             </div>
         </div>
     </div>

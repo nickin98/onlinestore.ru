@@ -5,6 +5,7 @@
     <title>DURUM</title>
     <meta name="keywords" content="keywords">
     <meta name="description" content="description_site">
+    <link rel="shortcut icon" href="/css/images/ico_ara.ico" type="image/x-icon">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- CSS -->
