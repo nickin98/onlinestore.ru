@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller
@@ -13,7 +14,8 @@ class ProfileController extends Controller
 
     public function index() {
         $user = \Auth::user();
-        return view('profile', ['user' => $user]);
+        $categories = Category::all();
+        return view('profile', ['user' => $user, 'categories' => $categories]);
     }
 
     public function update(Request $request) {
@@ -37,6 +39,8 @@ class ProfileController extends Controller
 
         $user->save();
 
-        return view('profile', ['user' => $user, 'success' => 'Профиль успешно изменен']);
+        $categories = Category::all();
+
+        return view('profile', ['user' => $user,'categories' => $categories, 'success' => 'Профиль успешно изменен']);
     }
 }

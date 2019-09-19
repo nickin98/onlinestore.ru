@@ -141,7 +141,7 @@ class OrderController extends Controller
             $allProductIds = Product::all()->pluck('id')->toArray();
 
             foreach($products as $productId => $product) {
-                if (!array_has($allProductIds, $productId)) {
+                if (!in_array($productId, $allProductIds)) {
                     throw new \Exception('Продукта с id=' . $productId. ' нет в базе данных');
                 }
                 $orderProduct = new OrderProduct();

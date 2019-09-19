@@ -13,6 +13,15 @@ if (productsHTML) {
 
 if (openCart()) {
     document.querySelector('.content').innerHTML += '<a href="/order">Оформить заказ</a>';
+
+    var cart = JSON.parse(localStorage.getItem('cart'));
+    var products = document.querySelectorAll('.product');
+    for(var i = 0; i < products.length; i++) {
+        var productId = products[i].querySelector('.accept-product').dataset.id;
+        if (cart[productId] != null) {
+            products[i].querySelector('#numberPieces').innerHTML = cart[productId][3];
+        }
+    }
 }
 
 var deleteFromCartButtons = document.querySelectorAll('.accept-product');
@@ -34,16 +43,17 @@ function getCartProducts() {
         var productMoney = parseInt(cart[id][1]);
         var productDescription = cart[id][2];
         var productCount = cart[id][3];
+        var productImagePath = cart[id][4];
         var totalPrice = productMoney * productCount;
         productsHTML += '<div class="product col-lg-3">';
         productsHTML +=     '<div class="preview-product-image">';
-        productsHTML +=         '<a href="#"><img class="img-fluid " src="images/durum2.png"></a>';
+        productsHTML +=         '<a href="#"><img class="img-fluid " src="' + productImagePath + '"></a>';
         productsHTML +=     '</div>';
         productsHTML +=     '<a class="name-product" href="#">' + productName + '</a>';
         productsHTML +=     '<div class="product-controls">';
         productsHTML +=         '<div class="row">';
         productsHTML +=             '<div class="product-price">';
-        productsHTML +=                 '<span class="product-money">' + totalPrice + ' ₽</span>';
+        productsHTML +=                 '<span class="product-money">' + totalPrice + ' ₽/</span><span id="numberPieces">0</span> шт';
         productsHTML +=         '</div>';
         productsHTML +=         '<div class="product-to-cart ml-auto">';
         productsHTML +=             '<a class="accept-product" data-id="' + id + '">Убрать</a>';
@@ -69,15 +79,26 @@ function openCart() {
 function deleteFromCart() {
     var productId = this.dataset.id;
     var productContainer = this.closest('.product');
-    productContainer.remove();
+    var numberPieces = productContainer.querySelector('#numberPieces');
 
     var cart = openCart();
 
     var price = document.querySelector('#basket-price');
-    localStorage.setItem('price', localStorage.getItem('price') - parseInt(cart[productId][1]) * cart[productId][3]);
+    // localStorage.setItem('price', localStorage.getItem('price') - parseInt(cart[productId][1]) * cart[productId][3]);
+    localStorage.setItem('price', localStorage.getItem('price') - parseInt(cart[productId][1]));
     price.innerHTML = localStorage.price;
 
-    delete cart[productId];
+    if (numberPieces.innerHTML == 1) {
+        productContainer.remove();
+        delete cart[productId];
+    } else {
+        numberPieces.innerHTML = numberPieces.innerHTML - 1;
+        cart[productId][3]--;
+        var money = productContainer.querySelector('.product-money');
+        money.innerHTML = parseInt(money.innerHTML) - parseInt(cart[productId][1]) + '₽/';
+    }
+
+
     if (isEmptyObject(cart)) {
         var container = document.querySelector('.content');
         localStorage.removeItem('cart');
